@@ -1,3 +1,5 @@
-# Microsoft Word to Markdown #
+# Microsoft Word to MultiMarkdown #
 
-#### Convert essays from Word documents (.docx) to Markdown files (.md) using [Pandoc](https://pandoc.org/index.html) ####
+#### Convert essays from Word documents (.docx) to MultiMarkdown files (.mmd) using [Pandoc](https://pandoc.org/index.html) ####
+
+code(pandoc essay.docx -f docx -t markdown_mmd -s -o essay.mmd)
