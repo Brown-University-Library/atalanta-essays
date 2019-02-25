@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atalanta</title>
+  <link media="all" rel="stylesheet" href="css/main.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+  <script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js" defer><\/script>')</script>
+  <script src="js/jquery.main.js" defer></script>
+</head>
+<body>
+  <div id="wrapper">
+    <header id="header">
+      <div class="header-wrap">
+        <div class="frame">
+          <div class="logo">
+            <a href="#">
+              <img src="images/logo.png" alt="ff" class="dark-logo">
+              <img src="images/logo01.png" alt="ff" class="light-logo">
+            </a>
+          </div>
+          <nav id="nav">
+            <a href="#" class="nav-opener"><span>Menu</span></a>
+            <div class="nav-drop">
+              <ul>
+                <li><a href="#">ESSAYS</a></li>
+                <li><a href="#">DIGITAL EDITION</a></li>
+                <li><a href="#">CONTENTS</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="header-area">
+        <section class="header-banner">
+          <div class="container">
+            <h1>All Collections</h1>
+          </div>
+          <div class="header-bg" style="background-image: url(images/img01.jpg);"></div>
+        </section>
+      </div>
+    </header>
+    <main id="main">
+      <div class="all-collections">
+        <div class="container">
+          <div class="create-collection">
+            <div class="new-collection">
+              <a class="lightbox btn" data-link="create" data-type="ajax" href="templates/modals/modal-create.html">Create a New Collection</a>
+            </div>
+            <div class="collection-view">
+              <span class="title">view<em>:</em></span>
+              <ul class="grids" data-target="#grid">
+                <li class="view-icon sm-view">
+                  <a href="javascript:;" data-grid="small"><span class="icon-viewsm"></span></a>
+                </li>
+                <li class="view-icon">
+                  <a href="javascript:;" data-grid="medium"><span class="icon-viewmd"></span></a>
+                </li>
+                <li class="view-icon">
+                  <a href="javascript:;" data-grid="large"><span class="icon-viewlg"></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="grids-content small-grid" id="grid"></div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-holder">
+          <ul class="quick-links">
+            <li><a href="#">DIGITAL EDITION</a></li>
+            <li><a href="#">SCHOLARLY ESSAYS</a></li>
+            <li><a href="#">RESOURCES</a></li>
+            <li><a href="#">ABOUT THE PROJECT</a></li>
+          </ul>
+          <div class="footer-logo">
+            <span class="text-before">A project of</span>
+            <div class="logo-text">
+              <a href="#">
+                <img src="images/f-logo.png" alt="A Project Of Brown University">
+                <span class="text"><strong>A PROJECT OF</strong> <br>Brown University</span>
+                <span class="text-after">
+                  BROWN
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div id="target"></div>
+  <script id="template" type="x-tmpl-mustache">
+    <div class="image-description" data-emblem-id="{{ id }}">
+      <div class="image-holder">
+        <img src="images/emblems/{{size}}/emblem{{id}}.{{size}}.jpg" alt="image-description">
+        <div class="drag-image">
+          <div class="drag-icon">
+            <img src="images/drag-icon.png" alt="drag-icon">
+          </div>
+          <span class="drag-text">
+            Drag to Reorder
+          </span>
+        </div>
+      </div>
+      <div class="detail">
+        <div class="name-tags">
+          <div class="name">Emblem {{name}}</div>
+          <ul class="extra-edits">
+            <li>
+              <a class="lightbox" data-link="zoom" data-type="ajax" data-src="templates/modals/modal-zoom.html" href="javascript:;"><span class="icon-search"></span></a>
+            </li>
+            <li><a href="#"> <span class="icon-trash"></span></a></li>
+          </ul>
+        </div>
+        <div class="tag-wrapper">
+          <a class="tag-opener" href="#">
+            TAGS <span class="icon-down"></span><span class="icon-cancel"></span>
+          </a>
+          <ul class="slide"></ul>
+          <div class="tag-no">
+            <span class="tags-count"></span>
+            <div class="tag-detail">
+              <span class="title">
+                <span class="tags-count"></span> Matching Tags in this Collection:
+              </span>
+              <ul class="tag-list"></ul>
+              <a class="all-tags" href="javascript:;'">
+                Show All Tags
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+  <div class="cookies-bar">
+    <div class="container">
+      <p>This website use cookies, which are necessary to its functioning. Please enable Cookies in your browser and try again.</p>
+    </div>
+    <a href="javascript:;" class="close"><span class="icon-cancel"></span></a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+.circular-highlight {
+	color: $white;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	background: #000;
+
+	@include media ('>=tablet') {
+		height: 100vh;
+	}
+
+	.container {
+		position: relative;
+		display: flex;
+		align-items: center;
+		z-index: 1;
+		height: 100%;
+	}
+
+	.text-hold {
+		@include media ('>=tablet') {
+			max-width: 69.2%;
+		}
+	}
+
+	h2 {
+		font-family: $base-font-serif;
+
+		@include media ('>=tablet') {
+			margin-bottom: 26px;
+		}
+	}
+}
+
+.bg-circle {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.section-content {
+	position: relative;
+	padding: 50px 0;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+
+	@include media ('>=tablet') {
+		background-image: none !important;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		top: 0;
+		height: calc(100vh);
+		padding: 0;
+	}
+
+	.fixed-state & {
+		position: fixed;
+		left: 0;
+		top: 0;
+		height: calc(100vh);
+		width: 100%;
+	}
+
+	.scroll-state & {
+		bottom: 0;
+		top: auto;
+	}
+
+	.img-holder {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		bottom: 0;
+		transform:  translateX(-50%);
+
+		img {
+			display: block;
+			height: 100%;
+			width: auto;
+			max-width: none;
+
+			@include media ('>=tablet') {
+				height: calc(100vh);
+			}
+		}
+	}
+}

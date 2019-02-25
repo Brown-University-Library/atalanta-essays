@@ -1,0 +1,42 @@
+.cookies-bar {
+	position: fixed;
+	opacity: 0;
+	visibility: hidden;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: $dark-gray;
+	box-shadow: 0 0 5px rgba($white, 0.2);
+	transform: translate3d(0, 100%, 0);
+	color: $white;
+	padding: 20px;
+	z-index: 9999;
+	@include animate(transform opacity visibility);
+
+	.cookies-disabled & {
+		opacity: 1;
+		visibility: visible;
+		transform: translate3d(0, 0, 0);
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.close {
+		position: absolute;
+		top: 5px;
+		right: 10px;
+		z-index: 1;
+		color: inherit;
+
+		.icon-cancel {
+			font-size: 13px;
+			line-height: 1;
+		}
+
+		&:hover {
+			color: $orange;
+		}
+	}
+}

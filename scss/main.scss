@@ -1,0 +1,56 @@
+$breakpoints: (
+	'xs-phone': 320px,
+	'phone': 480px,
+	'tablet': 768px,
+	'desktop': 1024px,
+	'widescreen': 1200px,
+	'wider': 1400px
+	);
+
+// keywords
+$media-expressions: (
+	'screen': 'screen',
+	'print': 'print',
+	'handheld': 'handheld',
+	'landscape': '(orientation: landscape)',
+	'portrait': '(orientation: portrait)',
+	'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+	'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+	);
+
+// ligatured operators ≥ ≤
+
+@import 'vendors/include-media';
+@import 'vendors/normalize';
+@import 'vendors/fonts';
+@import 'vendors/icomoon';
+@import 'vendors/fancybox';
+@import 'vendors/owl-carousel';
+
+@import 'base/functions';
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/helpers';
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/forms';
+
+@import 'layout/header';
+@import 'layout/common';
+@import 'layout/footer';
+
+@import 'components/design-collections';
+@import 'components/component';
+@import 'components/two-figure-side';
+@import 'components/circular-highlight';
+@import 'components/figure-with-text';
+@import 'components/collection-comparisons';
+@import 'components/sub-header-image';
+@import 'components/music-player-with-text';
+@import 'components/owl-slider';
+@import 'components/hotspots';
+@import 'components/cannon-tab-section';
+@import 'components/properties-section';
+@import 'components/large-comparison';
+@import 'components/magic-square';
+@import 'components/cookies-bar';

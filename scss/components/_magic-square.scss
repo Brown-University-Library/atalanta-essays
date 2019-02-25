@@ -1,0 +1,169 @@
+.magic-square {
+	background-color: $black;
+	color: $white;
+	padding:25px 0;
+
+	@include media('>=tablet') {
+		padding:28px 0 59px;
+	}
+
+	.text {
+		margin-bottom: 103px;
+	}
+
+	.figure {
+		text-align: left;
+		padding-top: 22px;
+	}
+
+	figure {
+		margin:0;
+
+		img {
+			margin-bottom: 30px;
+		}
+	}
+
+	.title {
+		font-family: '$base-font-serif';
+		font-size: 24px;
+		font-weight: 700;
+	}
+}
+
+.square-carousel {
+	margin-bottom: 17px;
+
+	&:after {
+		@include media('>=tablet') {
+			content:'. . .';
+			left: 100%;
+			top: 56%;
+			position: absolute;
+			color: $white;
+			width: 100%;
+			font-size: 30px;
+			transform: translateX(5px);
+		}
+
+		@include media('>=940px') {
+			transform: translateX(-110px);
+		}
+
+		@include media('>=desktop') {
+			transform: translateX(-70px);
+		}
+
+		@include media('>=1365px') {
+			transform: translateX(-102px);
+		}
+	}
+
+	@include media('>=tablet') {
+		padding-right: 0px;
+	}
+
+	@include media('>=940px') {
+		padding-right: 110px;
+	}
+
+	@include media('>=desktop') {
+		padding-right: 60px;
+	}
+
+	@include media('>=widescreen') {
+		padding-right: 130px;
+	}
+
+	.owl-dots {
+		display: none;
+	}
+
+	.square-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0;
+		justify-content: center;
+
+		@include media('>=tablet') {
+			margin:0 -4px;
+			justify-content: flex-start;
+		}
+
+		@include media('>=desktop') {
+			margin:0 -13px;
+		}
+	}
+
+	.square {
+		padding:0 10px;
+		margin-bottom: 18px;
+
+		@include media('>=tablet') {
+			padding:0 4px;
+		}
+
+		@include media('>=desktop') {
+			padding:0 19px;
+		}
+
+		.detail {
+			padding:0 10px 7px;
+			border: 2px solid #535353;
+			width: 100px;
+			margin-bottom: 12px;
+
+			@include media('>=phone') {
+				width: 121px;
+			}
+		}
+
+		.caption {
+			font-size: 12px;
+			font-weight: 600;
+			width: 100px;
+			display: block;
+			padding: 0 2px;
+
+			@include media('>=phone') {
+				width: 121px;
+				font-size: 15px;
+			}
+		}
+
+		.span {
+			display: block;
+		}
+
+		.square-holder {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		.sm-square {
+			width: 48%;
+			background-color: #666666;
+			height: 35px;
+			margin-bottom: 3px;
+
+			@include media('>=phone') {
+				height: 40px;
+			}
+
+			@include media('>=desktop') {
+				height: 47px;
+			}
+		}
+
+		.number {
+			font-size: 20px;
+			margin-bottom: 12px;
+			display: inline-block;
+
+			@include media('>=phone') {
+				font-size: 30px;
+			}
+		}
+	}
+}

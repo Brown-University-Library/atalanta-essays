@@ -1,0 +1,101 @@
+.cannon-tab {
+	background-color: black;
+	color: $white;
+	padding: 60px 0 40px;
+
+	@include media('>=tablet') {
+		padding: 120px 0 47px;
+	}
+
+	.cannon-detail {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.cannon-wrap {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		@include media('>=tablet') {
+			width: 360px;
+		}
+
+		@include media('>=desktop') {
+			width: 587px;
+		}
+
+		@include media('>=1365px') {
+			margin-right: -58px;
+		}
+	}
+
+	.text-wrap {
+		margin-bottom: 25px;
+
+		@include media('>=tablet') {
+			width: calc(100% - 430px);
+			margin-bottom: 0;
+		}
+
+		@include media('>=desktop') {
+			width: calc(100% - 642px);
+			padding-top: 16px;
+		}
+	}
+
+	.tabset {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		@include media('>=tablet') {
+			justify-content: flex-start;
+		}
+
+		li {
+			margin-bottom: 8px;
+
+			a {
+				font-size: 13px;
+				color: #a9a9a9;
+				display: block;
+				padding: 3px 14px 2px;
+				border: 1px solid transparent;
+				font-weight: 600;
+
+				@include media('>=tablet') {
+					font-size: 15px;
+					padding: 3px 19px 2px;
+				}
+
+				&:hover {
+					border: 1px solid #4cbb8d;
+					color: #4cbb8d;
+				}
+			}
+
+			.tab-active {
+				border: 1px solid #4cbb8d;
+				color: #4cbb8d;
+			}
+		}
+	}
+
+	.img-holder {
+		margin-bottom: 28px;
+		text-align: center;
+		@include media('>=desktop') {
+			margin-bottom: 74px;
+		}
+	}
+
+	.figure {
+		padding-top: 25px;
+
+		@include media('>=desktop') {
+			padding-top: 62px;
+		}
+	}
+}

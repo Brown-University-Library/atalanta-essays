@@ -1,0 +1,128 @@
+.figure-with-text {
+	background: $black;
+	padding: 50px 0;
+	color: $white;
+
+	@include media ('>=tablet') {
+		padding: 100px 0;
+	}
+
+	@include media ('>=desktop') {
+		padding: 126px 0 128px;
+	}
+
+	.container {
+		@include media ('>=tablet') {
+			display: flex;
+			flex-direction: row-reverse;
+		}
+	}
+
+	.text-hold {
+
+		@include media ('>=tablet') {
+			max-width: 50%;
+			flex: 0 0 50%;
+			padding-right: 30px;
+			width: 100%;
+		}
+
+		@include media ('>=wider') {
+			max-width: 532px;
+			flex: 0 0 532px;
+			padding-right: 90px;
+		}
+	}
+
+	.img-hold {
+		flex: 1;
+		padding-bottom: 40px;
+
+		@include media ('>=tablet') {
+			padding: 3px 0 0;
+		}
+	}
+
+	img {
+
+		@include media ('>=wider') {
+			max-width: none;
+			margin-right: -118px;
+		}
+	}
+}
+
+.anim-section {
+	@include media ('>=tablet') {
+		padding: 0;
+		position: relative;
+	}
+
+	.anim-section-wrapper {
+		padding: 50px 0;
+
+		@include media ('>=tablet') {
+			min-height: calc(100vh);
+			height: calc(100vh);
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			padding: 100px 0;
+		}
+
+		> .container {
+			flex-wrap: wrap;
+		}
+	}
+
+	.anim-content {
+		@include media ('>=tablet') {
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			width: 100%;
+			position: absolute;
+			left: -9999px;
+			top: -9999px;
+			opacity: 0;
+			visibility: hidden;
+			@include animate(opacity visibility);
+		}
+
+		&.content-active {
+			opacity: 1;
+			visibility: visible;
+			position: static;
+		}
+
+		& + & {
+			padding-top: 50px;
+
+			@include media ('>=tablet') {
+				padding-top: 0;
+			}
+		}
+ 	}
+
+	&.fixed-state {
+		.anim-section-wrapper {
+			@include media ('>=tablet') {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+			}
+		}
+	}
+
+	&.scroll-state {
+		.anim-section-wrapper {
+			@include media ('>=tablet') {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+			}
+		}
+	}
+}

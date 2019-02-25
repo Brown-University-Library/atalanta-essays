@@ -1,0 +1,702 @@
+.resize-active {
+  * {
+    transition: none !important;
+  }
+}
+
+#header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-width: 320px;
+
+  .logo {
+    width: 20px;
+    position: relative;
+    z-index: 1;
+
+    @include media('>=tablet') {
+      margin: 9px 0 -32px;
+      width: auto;
+    }
+
+    .light-logo {
+      display: none;
+    }
+
+    a {
+      color: $dark-gray;
+    }
+  }
+
+  .header-wrap {
+    position: relative;
+
+    &:before {
+      @include media('>=tablet') {
+        content: '';
+        background: $yellow;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 59%;
+      }
+    }
+
+    .frame {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background: $orange;
+      padding: 5px 20px;
+
+      @include media('>=tablet') {
+        padding: 0 20px;
+      }
+
+      @include media('>=desktop') {
+        padding: 0 40px;
+      }
+
+      @include media('>=widescreen') {
+        padding: 0 67px 0 54px;
+      }
+    }
+  }
+}
+
+.nav-drop {
+  @include media('<tablet') {
+    overflow: hidden;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    z-index:999;
+    padding: 0;
+  }
+}
+
+.nav-drop{
+  @include media('<tablet') {
+    max-height:0;
+    transition:all 0.25s linear;
+  }
+
+  .nav-active & {
+    @include media('<tablet') {
+      max-height:4000px;
+    }
+
+    ul {
+      @include media('<tablet') {
+        transform:translateY(0);
+      }
+    }
+  }
+
+  ul {
+    @include media('<tablet') {
+      transition:all 0.25s linear;
+      transform:translateY(-100%);
+    }
+  }
+}
+
+#nav {
+  padding-top: 20px;
+  padding-bottom: 14px;
+
+  ul {
+    background: $dark-gray;
+    padding: 10px 0;
+
+    @include media('>=tablet') {
+      display: flex;
+      flex-wrap: wrap;
+      background: none;
+      padding: 0;
+    }
+
+    > li {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+
+      + li {
+        @include media('>=tablet') {
+          margin-left: 20px;
+        }
+
+        @include media('>=widescreen') {
+          margin-left: 75px;
+        }
+      }
+
+      > a {
+        color: $white;
+        padding: 12px 10px 8px;
+        display: block;
+
+        @include media('>=tablet') {
+          color: $dark-gray;
+          display: inline;
+          padding: 0;
+        }
+
+        &:hover {
+          color: $yellow;
+          background: lighten($dark-gray, 10%);
+
+          @include media('>=tablet') {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+
+  .nav-opener {
+    @include media('>=tablet') {
+      display: none;
+    }
+  }
+}
+
+.page-anchor {
+  background: $dark-gray;
+
+  ol {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 0 27px;
+    counter-reset: item;
+    margin: 0 -5px;
+    list-style: none;
+
+    @include media('>=tablet') {
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 26px 0 19px;
+    }
+
+    li {
+      font-size: 12px;
+      line-height: 1.38;
+      position: relative;
+      margin: 0 5px;
+
+      @include media('>=tablet') {
+        font-size: 14px;
+        max-width: 145px;
+        margin-bottom: 18px;
+      }
+
+      @include media('>=desktop') {
+        font-size: 16px;
+        max-width: 235px;
+      }
+
+      &.anchor-active {
+        a {
+          color: $white;
+          padding-left: 14px;
+
+          @include media('>=tablet') {
+            padding-left: 18px;
+          }
+
+          &:before {
+            color: $white;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            @include media('<tablet') {
+              content: counters(item, " ") ".";
+            }
+          }
+
+          &:after {
+            display: block;
+          }
+
+          span {
+            @include media('<tablet') {
+              display: inline-block;
+            }
+          }
+        }
+      }
+
+      a {
+        color: $gray;
+        display: inline-block;
+        vertical-align: top;
+
+        @include media('>=tablet') {
+          padding-left: 18px;
+        }
+
+        &:before {
+          content: counters(item, " ") ".";
+          counter-increment: item;
+          font-weight: 600;
+          color: #989898;
+          margin-right: 5px;
+          @include animate(color);
+
+          @include media('<tablet') {
+            content: counters(item, " ") "";
+            margin-right: 0;
+          }
+
+          @include media('>=tablet') {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+
+        &:after {
+          content: '';
+          background: $orange;
+          height: 2px;
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          right: 0;
+          display: none;
+
+          @include media('>=tablet') {
+            height: 3px;
+            bottom: -11px;
+          }
+        }
+
+        &:hover {
+          color: $white;
+
+          &:before {
+            color: $white;
+          }
+
+          &:after {
+            @include media('>=desktop') {
+              display: block;
+            }
+          }
+        }
+
+        span {
+          @include media('<tablet') {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.header-banner {
+  position: relative;
+  background: #ffb000;
+  color: $white;
+  z-index: 0;
+  padding: 30px 0;
+
+  @include media('>=tablet') {
+    padding: 160px 0 89px;
+  }
+
+  .header-bg {
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+
+    @include media('>=tablet') {
+      left: 41%;
+    }
+  }
+
+  h1 {
+    margin-bottom: 23px;
+    word-wrap: break-word;
+
+    @include media('>=tablet') {
+      margin-bottom: 67px;
+    }
+  }
+
+  h4 {
+    line-height: 1.38;
+    margin-bottom: 20px;
+
+    @include media('>=tablet') {
+      margin-bottom: 35px;
+    }
+  }
+
+  .by {
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  .caption {
+    display: block;
+
+    @include media('>=tablet') {
+      width: 300px;
+    }
+
+    @include media('>=desktop') {
+      width: 345px;
+    }
+  }
+}
+
+.nav-opener {
+  width: 22px;
+  height: 16px;
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  text-indent: -9999px;
+  outline: none;
+
+  @include media('>=tablet') {
+    display: none;
+  }
+
+  &:hover {
+    &:before,
+    &:after,
+    span {
+      background: lighten($dark-gray, 10%);
+    }
+  }
+
+  &:before,
+  &:after,
+  span {
+    content: '';
+    background: $dark-gray;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 6px;
+    transition: all 0.35s ease;
+
+    @include media('>=tablet') {
+      background: #969898;
+    }
+  }
+
+  &:after {
+    top: 12px;
+  }
+
+  &:before {
+    top: 0;
+  }
+
+  span {
+    .nav-active & {
+      opacity: 0;
+    }
+  }
+
+  &:before,
+  &:after {
+    .nav-active & {
+      -moz-transform:rotate(45deg);
+      -webkit-transform:rotate(45deg);
+      -ms-transform:rotate(45deg);
+      transform:rotate(45deg);
+      top:5px;
+      left:0;
+      right:0;
+      height: 2px;
+    }
+  }
+
+  &:after {
+    .nav-active & {
+      -moz-transform:rotate(-45deg);
+      -webkit-transform:rotate(-45deg);
+      -ms-transform:rotate(-45deg);
+      transform:rotate(-45deg);
+    }
+  }
+}
+
+.fixed-header {
+  #header {
+    background: $dark-gray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-width: 320px;
+    z-index: 999;
+
+    .logo {
+      width: 18px;
+      margin: 0;
+
+      @include media('>=tablet') {
+        width: 20px;
+      }
+
+      .dark-logo {
+        display: none;
+      }
+
+      .light-logo {
+        display: block;
+      }
+    }
+
+    .header-wrap {
+      &:before {
+        display: none;
+      }
+
+      .frame {
+        background: none;
+        padding: 8px 20px;
+
+        @include media('>=tablet') {
+          padding: 0 20px;
+        }
+
+        @include media('>=desktop') {
+          padding: 0 67px 0 54px;
+        }
+      }
+    }
+
+    .header-area {
+      position: absolute;
+      top: 0;
+      left: 55px;
+      right: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      z-index: 2;
+
+      @include media('>=tablet') {
+        left: 75px;
+        right: 330px;
+      }
+
+      @include media('>=desktop') {
+        left: 100px;
+        right: 390px;
+      }
+
+      @include media('>=widescreen') {
+        left: 130px;
+        right: 500px;
+      }
+    }
+
+    .header-banner {
+      background: none;
+      padding: 0;
+      display: none;
+
+      @include media('>=desktop') {
+        display: block;
+      }
+
+      .header-bg {
+        background: none !important;
+        position: static;
+      }
+
+      h1 {
+        font: 15px/1.2 $base-font-sans-serif;
+        font-weight: 400;
+        margin: 0;
+        padding: 12px 0;
+        max-width: 140px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-right: 7px;
+      }
+
+      .caption {
+        display: none;
+      }
+    }
+  }
+
+  #nav {
+    padding: 12px 0 10px;
+
+    ul {
+      > li {
+        > a {
+          color: #808080;
+
+          &:hover {
+            color: $yellow;
+          }
+        }
+      }
+    }
+  }
+
+  .page-anchor {
+    background: none;
+
+    .container {
+      padding: 0;
+    }
+
+    ol {
+      // justify-content: flex-start;
+      display: block;
+      padding: 19px 0 5px;
+      margin: 0 -4px;
+
+      @include media('>=tablet') {
+        padding: 10px 0;
+        margin: 0 -5px;
+      }
+
+      @include media('>=desktop') {
+        padding: 11px 0;
+        margin: 0 -9px;
+      }
+
+      li {
+        font-size: 10px;
+        margin: 0 4px;
+        display: inline-block;
+        vertical-align: top;
+
+        @include media('>=tablet') {
+          font-size: 14px;
+          margin: 0 5px;
+          max-width: 100%;
+        }
+
+        @include media('>=desktop') {
+          font-size: 15px;
+          margin: 0 9px;
+        }
+
+        @include media('>=1300px') {
+          max-width: 100%;
+        }
+
+        span {
+          display: none;
+        }
+
+        &.anchor-active {
+          span {
+            display: inline-block;
+            white-space: nowrap;
+            max-width: 120px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+            @include media('>=tablet') {
+              max-width: 190px;
+            }
+
+            @include media('>=1300px') {
+              max-width: 100%;
+            }
+          }
+
+          a {
+            padding-left: 14px;
+
+            @include media('>=tablet') {
+              padding-left: 18px;
+            }
+
+            &:before {
+              content: counters(item, " ") ".";
+              margin-right: 5px;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+
+            &:after {
+              bottom: -1px;
+
+              @include media('>=tablet') {
+                bottom: -6px;
+              }
+            }
+
+            &:hover {
+              &:after {
+                bottom: -1px;
+                display: block;
+
+                @include media('>=tablet') {
+                  bottom: -6px;
+                }
+              }
+            }
+          }
+        }
+
+        a {
+          padding-left: 0;
+
+          &:before {
+            content: counters(item, " ") "";
+            margin: 0;
+            position: static;
+          }
+
+          &:hover {
+            &:after {
+              bottom: -5px;
+              display: none;
+
+              @include media('>=tablet') {
+                bottom: -10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nav-opener {
+    top: 12px;
+    right: 11px;
+
+    &:before,
+    &:after,
+    span {
+      background: $white;
+    }
+  }
+}

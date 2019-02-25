@@ -1,0 +1,122 @@
+#footer {
+	padding:50px 0;
+	background-color: #333333;
+
+	@include media('>=tablet') {
+		padding:100px 0;
+	}
+
+	.container {
+		max-width: 1137px;
+		padding:0 25px;
+
+		@include media('>=tablet') {
+			padding-right: 19px;
+			padding-left: 14px;
+		}
+	}
+}
+
+.footer-holder {
+
+	@include media('>=phone') {
+		display: flex;
+		flex-wrap:wrap;
+		justify-content: space-between;
+		margin:0 -15px;
+	}
+}
+
+.quick-links {
+	margin-bottom: 75px;
+
+	@include media('>=phone') {
+		padding:0 15px;
+		margin-bottom: 0;
+		max-width: 50%;
+	}
+
+	li {
+		font-size: 12px;
+		font-weight: 600;
+		margin-bottom: 15px;
+		text-transform: uppercase;
+
+		@include media('>=phone') {
+			margin-bottom: 12px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		a {
+			color: $white;
+			letter-spacing: 0.8px;
+			
+			&:hover {
+				color: #dc4929;
+			}
+		}
+	}
+}
+
+.footer-logo {
+	@include media('>=phone') {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		padding:0 15px;
+	}
+
+	.text {
+		color: $white;
+		font-size: 13px;
+		margin-left: 25px;
+		display: none;
+		@include media('>=phone') {
+			display: block;
+		}
+
+		strong {
+			font-size: 12px;
+			letter-spacing: 0.8px;
+		}
+	}
+
+	.text-before {
+		font-size: 13px;
+		font-weight: 600;
+		margin-bottom: 29px;
+		color: $white;
+		display: block;
+		text-transform: uppercase;
+
+		@include media('>=phone') {
+			display: none;
+		}
+	}
+
+	.text-after {
+		font-size: 25px;
+		color: $white;
+		display: block;
+		font-family: 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif;
+		margin-left: 11px;
+		font-weight: 400;
+		letter-spacing: 1.5px;
+
+		@include media('>=phone') {
+			display: none;
+		}
+	}
+
+	.logo-text {
+		a {
+			display: flex;
+			flex-wrap: wrap;
+			align-items:center;
+		}
+	}
+}
+

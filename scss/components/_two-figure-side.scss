@@ -1,0 +1,45 @@
+.two-figure-side {
+	padding-top: 55px;
+	background: $black;
+	color: $white;
+
+	.text-hold {
+		padding-bottom: 36px;
+
+		@include media('>=desktop') {
+			padding: 0 40px 36px 0;
+		}
+	}
+
+	.two-image {
+		display: flex;
+		flex-wrap: wrap;
+
+		@include media('>=tablet') {
+			margin: 0 -14px;
+		}
+
+		.col {
+			width: 100%;
+
+			@include media('>=tablet') {
+				padding: 0 14px;
+				width: 50%;
+			}
+
+			img {
+				@include media('>=tablet') {
+					max-height: 435px;
+				}
+
+				@include media('>=desktop') {
+					max-height: 100%;
+				}
+			}
+		}
+	}
+
+	.figure {
+		padding-top: 0;
+	}
+}
