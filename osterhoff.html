@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atalanta</title>
+  <title>Atalanta.com</title>
   <link media="all" rel="stylesheet" href="css/main.css">  
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
   <script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js" defer><\/script>')</script>
@@ -197,7 +197,7 @@
         <div class="container">
           <div class="content">
             <p>Recall the tenor of his argument: that “reason and experience” are the way forward in developing new knowledge; and that, contrary to what the Platonists might say, mathematics is evidence for the productivity of reason and experience. Near the end of the discourse, however, Maier’s argument moves from the lofty eminences of philosophy, Plato and Aristotle, to practical mathematics.</p>
-            <p>Money and politics were certainly on Maier’s mind. After 1611, when Rudolf II died, he lost a powerful patron, and began traveling Europe and writing in search of a new one. After time in Rotterdam and London, he settled in Frankfurt am Main. In the two years leading up to the publication of Atalanta fugiens early in 1618, Maier had written several “chemical tracts” while he lay ill, including a De circulo physico quadrato (On the Natural [or: Physical] Circle Squared, 1616) dedicated to Moritz of Hessen-Kassel, a prince widely known for his alchemical interests.  In April 1618—the ink on Atalanta fugiens barely dry—Maier sent it along with ten of his other books to the prince and was promptly appointed Medicus und Chymicus von Hauß aus [Court Physician and Chymist].  The books had achieved their main goal of catching the count’s eye. Maier himself later admitted these books were meant to gain attention—indeed to sell, as they were “inspired more by the small payment which I received for them rather than by the improvement and perfection of the works themselves.”  The contents of De circulo physico quadrato in no way attempted to contribute to the mathematical scholarship on quadrature. It developed a reflection on the “circular” motions of the natural four elements, which tend ultimately to circular perfection, in the heavens, on earth, and also in human hearts. The book culminated in reflections on the prince as the heart of his people, the center who unified disparate members within the political ambit.</p>
+            <p>Money and politics were certainly on Maier’s mind. After 1611, when Rudolf II died, he lost a powerful patron, and began traveling Europe and writing in search of a new one. After time in Rotterdam and London, he settled in Frankfurt am Main. In the two years leading up to the publication of Atalanta fugiens early in 1618, Maier had written several “chemical tracts” while he lay ill, including a De circulo physico quadrato (On the Natural [or: Physical] Circle Squared, 1616) dedicated to Moritz of Hessen-Kassel, a prince widely known for his alchemical interests.  In April 1618—the ink on Atlanta fugiens barely dry—Maier sent it along with ten of his other books to the prince and was promptly appointed Medicus und Chymicus von Hauß aus [Court Physician and Chymist].  The books had achieved their main goal of catching the count’s eye. Maier himself later admitted these books were meant to gain attention—indeed to sell, as they were “inspired more by the small payment which I received for them rather than by the improvement and perfection of the works themselves.”  The contents of De circulo physico quadrato in no way attempted to contribute to the mathematical scholarship on quadrature. It developed a reflection on the “circular” motions of the natural four elements, which tend ultimately to circular perfection, in the heavens, on earth, and also in human hearts. The book culminated in reflections on the prince as the heart of his people, the center who unified disparate members within the political ambit.</p>
             <p>Maier opened De circulo physico quadrato with a familiar hook in the first sentence of the dedication:</p>
             <div class="left-space">
               <p>“Aristotle claimed that in his time, most illustrious prince, the quadrature of the circle was not known, though knowable. After him many—too quickly shouting that Archimidean phrase ‘eureka, eureka’—proclaim that they have discovered it, while others say something else. Most only deal only with geometrical subjects, while few deal with subjects that look not so much to mathematics as to physical matter, such as natural bodies.”</p>
@@ -340,6 +340,50 @@
          </div>
         </div>
       </section>
+      <div class="collections-wrapper">
+        <div class="collection-opener">
+          <div class="opener-holder-bg">
+            <div class="opener-holder">
+              <span class="collection-name">Emblem Collections</span>
+              <div class="js-btns">
+                <a href="#" class="btn-up">
+                  <span class="icon-up"></span>
+                </a>
+                <a href="#" class="btn-down">
+                  <span class="icon-down"></span>
+                </a>
+                <a href="#" class="btn-close">
+                  <span class="icon-cancel"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="all-collections">
+          <div class="container">
+            <div class="create-collection">
+              <div class="new-collection">
+                <a class="lightbox btn" data-link="create" data-type="ajax" href="templates/modals/modal-create.html">Create a New Collection</a>
+              </div>
+              <div class="collection-view">
+                <span class="title">view<em>:</em></span>
+                <ul class="grids" data-target="#grid">
+                  <li class="view-icon sm-view">
+                    <a href="javascript:;" data-grid="small"><span class="icon-viewsm"></span></a>
+                  </li>
+                  <li class="view-icon">
+                    <a href="javascript:;" data-grid="medium"><span class="icon-viewmd"></span></a>
+                  </li>
+                  <li class="view-icon">
+                    <a href="javascript:;" data-grid="large"><span class="icon-viewlg"></span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="grids-content small-grid" id="grid"></div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer id="footer">
       <div class="container">
@@ -366,6 +410,51 @@
       </div>
     </footer>
   </div>
+  <div id="target"></div>
+  <script id="template" type="x-tmpl-mustache">
+    <div class="image-description" data-emblem-id="{{ id }}">
+      <div class="image-holder">
+        <img src="images/emblems/{{size}}/emblem{{id}}.{{size}}.jpg" alt="image-description">
+        <div class="drag-image">
+          <div class="drag-icon">
+            <img src="images/drag-icon.png" alt="drag-icon">
+          </div>
+          <span class="drag-text">
+            Drag to Reorder
+          </span>
+        </div>
+      </div>
+      <div class="detail">
+        <div class="name-tags">
+          <div class="name">Emblem {{name}}</div>
+          <ul class="extra-edits">
+            <li>
+              <a class="lightbox" data-link="zoom" data-type="ajax" data-src="templates/modals/modal-zoom.html" href="javascript:;"><span class="icon-search"></span></a>
+            </li>
+            <li><a href="#"> <span class="icon-trash"></span></a></li>
+          </ul>
+        </div>
+        <div class="tag-wrapper">
+          <a class="tag-opener" href="#">
+            TAGS <span class="icon-down"></span><span class="icon-cancel"></span>
+          </a>
+          <ul class="slide"></ul>
+          <div class="tag-no">
+            <span class="tags-count"></span>
+            <div class="tag-detail">
+              <span class="title">
+                <span class="tags-count"></span> Matching Tags in this Collection:
+              </span>
+              <ul class="tag-list"></ul>
+              <a class="all-tags" href="javascript:;'">
+                Show All Tags
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
   <div class="cookies-bar">
     <div class="container">
       <p>This website use cookies, which are necessary to its functioning. Please enable Cookies in your browser and try again.</p>

@@ -1,6 +1,10 @@
+html, body {
+	height: 100%;
+}
 #wrapper {
 	overflow: hidden;
 	position: relative;
+	min-height: 100%;
 }
 
 .container {

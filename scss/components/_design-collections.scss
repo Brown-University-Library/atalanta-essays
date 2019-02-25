@@ -8,11 +8,13 @@
 
 .collections-wrapper {
 	position: fixed;
-	top: calc(100% - 20px);
+	top: 100%;
+	margin-top: -20px;
 	left: 0;
 	width: 100%;
 	z-index: 100;
 	transition: top 0.3s;
+	z-index: 99988;
 
 	.cookies-disabled & {
 		display: none;
@@ -1052,6 +1054,12 @@
 			}
 		}
 
+		.error-message {
+			display: block;
+			font-size: 14px;
+			color: #f00;
+		}
+
 		button {
 			background: transparent;
 			border: none;
@@ -1064,7 +1072,6 @@
 
 .choose-collections {
 	.collection-wrap {
-
 		@include media('>=desktop') {
 			display: flex;
 			flex-wrap: wrap;
@@ -1131,6 +1138,7 @@
 .copy-collections {
 	.link-holder {
 		position: relative;
+		word-break: break-all;
 	}
 
 	.copy-info-popup {
@@ -1158,9 +1166,9 @@
 
 	.link {
 		background-color: #798a8a;
-		padding: 0 2px; 
+		padding: 0 2px;
 		font-size: 20px;
-		word-wrap: break-word;
+		word-break: break-all;
 		color: $white;
 	}
 
@@ -1289,7 +1297,6 @@
 	.image-list {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-between;
 		font-size: 12px;
 		color: #fff;
 		margin: 0 -10px 20px;
@@ -1313,6 +1320,10 @@
 
 			&.active {
 				opacity: 0.6;
+			}
+
+			&.hidden-item {
+				display: none;
 			}
 		}
 
