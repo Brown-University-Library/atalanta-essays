@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
     <style media="screen">
@@ -18,43 +18,39 @@
         padding-top: 30px;
         padding-bottom: 30px;
       }
-      .inner {
-        padding-left: 30px;
-        padding-right: 30px;
+      .container-fluid {
+          max-width: 1400px;
       }
     </style>
   </head>
   <body>
 
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-dark justify-content-center">
       <a class="navbar-brand" href="#">Atalanta Front-end Prototypes</a>
     </nav>
 
-    <div class="wrapper row">
-      <div class="col-sm-12">
-        <div class="inner">
-
-          <a href="all-collections.html">All Collections</a><br /><br />
-
-          1 - Introduction<br />
-            
-          <a href="nummedol.html">2 - Nummedol</a><br />
-
-          <a href="gaudio.html">3 - Gaudio</a><br/>
-
-          <a href="ludwig.html">4 - Ludwig</a><br/>
-
-          <a href="oosterhoff.html">5 - Oosterhoff</a><br/>
-
-          <a href="forshaw.html">6 - Forshaw</a><br/>
-
-          <a href="bilak.html">7 - Bilak</a><br/>
-
-          8 - Bianchi<br/>
-
-        </div>
-      </div>
+    <div class="container-fluid wrapper">
+            <div class="row justify-content-center">
+                    <div class="col-md-6">
+                      <div class="inner">
+              
+                          <ul class="list-group">
+                              <a class="list-group-item list-group-item-action list-group-item-warning" href="#">1 - Introduction</a>
+                              <a class="list-group-item list-group-item-action" href="nummedol.html">2 - Nummedol</a>
+                              <a class="list-group-item list-group-item-action" href="gaudio.html">3 - Gaudio</a>
+                              <a class="list-group-item list-group-item-action" href="ludwig.html">4 - Ludwig</a>
+                              <a class="list-group-item list-group-item-action" href="oosterhoff.html">5 - Oosterhoff</a>
+                              <a class="list-group-item list-group-item-action" href="forshaw.html">6 - Forshaw</a>
+                              <a class="list-group-item list-group-item-action" href="bilak.html">7 - Bilak</a>
+                              <a class="list-group-item list-group-item-action list-group-item-warning" href="#">8 - Bianchi
+                              <a class="list-group-item list-group-item-action" href="all-collections.html">All Collections</a>
+                          </ul>
+              
+                      </div>
+                    </div>
+                  </div>
     </div>
+    
 
   </body>
 </html>
