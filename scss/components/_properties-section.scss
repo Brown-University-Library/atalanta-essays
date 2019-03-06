@@ -3,7 +3,71 @@
 	padding-bottom: 50px;
 
 	@include media('>=tablet') {
-		padding-bottom: 103px;
+		padding: 0;
+		position: relative;
+	}
+
+	.container {
+		height: 100%;
+		position: static;
+	}
+
+	.properties-fake-wrapper {
+		@include media('>=tablet') {
+			background: #f1f1f1;
+			min-height: 100vh;
+			position: absolute;
+			padding: 50px 0;
+			left: 15px;
+			right: 15px;
+			height: 100%;
+		}
+	}
+
+	&.fixed-state {
+		.properties-fake-wrapper {
+			@include media('>=tablet') {
+				position: fixed;
+				left: 15px;
+				right: 15px;
+				top: 0;
+			}
+			.mask-active {
+				@include media('>=tablet') {
+					position: absolute;
+					left: 0;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	&.scroll-state {
+		.properties-fake-wrapper {
+			position: absolute;
+			left: 15px;
+			right: 15px;
+			top: 0;
+
+			.mask {
+				&:not(:last-child) {
+					@include media('>=tablet') {
+						opacity: 0;
+						visibility: hidden;
+						position: absolute;
+						left: 0;
+						width: 100%;
+					}
+				}
+
+				&:last-child {
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					top: auto;
+				}
+			}
+		}
 	}
 
 	.text {
@@ -25,8 +89,25 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 
-		@include media('>=desktop') {
-			padding-right: 80px;
+		@include media('>=tablet') {
+			position: absolute;
+			top: 150px;
+			left: 0;
+			right: 0;
+			opacity: 0;
+			visibility: hidden;
+			width: 100%;
+			min-height: calc(100vh - 150px);
+			max-width: 1110px;
+			margin: 0 auto;
+			transition: opacity 0.25s, visibility 0.25s;
+		}
+
+		&.mask-active {
+			@include media('>=tablet') {
+				opacity: 1;
+				visibility: visible;
+			}
 		}
 	}
 
@@ -41,7 +122,7 @@
 
 	.board-holder {
 		width: 290px;
-		margin: 0 auto;
+		margin: 0 auto 50px;
 
 		@include media('>=tablet') {
 			width: 40.6%;
@@ -49,52 +130,46 @@
 		}
 
 		@include media('>=widescreen') {
-			width: 52%;
-			margin-right: -115px;
+			width: 46%;
+		}
+
+		@include media('>=wider') {
+			width: 49%;
 		}
 
 		.item {
 			position: relative;
+			padding-left: 34px;
+			padding-right: 34px;
 
 			@include media('>=widescreen') {
 				padding-right: 115px;
-			}
-		}
-
-		&.board02 {
-			@include media('>=tablet') {
-				width: 45%;
+				padding-left: 54px;
 			}
 
-			@include media('>=desktop') {
-				width: 51.5%;
-				margin-right: -70px;
-			}
+			.rotate {
+				position: absolute;
+				top: -50px;
+				left: 50%;
+				transform: translateX(-50%);
+				text-align: center;
 
-			@include media('>=widescreen') {
-				margin-right: -108px;
-			}
-
-			.item {
-				padding-left: 34px;
-				padding-right: 34px;
-
-				@include media('>=desktop') {
-					padding-right: 54px;
-					padding-left: 54px;
+				@include media('>=tablet') {
+					top: -90px;
 				}
-			}
 
-			.owl-theme {
-				.owl-dots {
-					@include media('>=widescreen') {
-						padding-right: 0;
+				img {
+					width: 60%;
+					display: inline-block;
+
+					@include media('>=tablet') {
+						width: 80%;
+					}
+
+					@include media('>=wider') {
+						width: auto;
 					}
 				}
-			}
-
-			.owl-stage-outer {
-				padding: 54px 0;
 			}
 
 			.arrow-y {
@@ -103,12 +178,20 @@
 				transform: translateX(-50%);
 				text-align: center;
 
+				@include media('>=widescreen') {
+					padding-right: 61px;
+				}
+
 				img {
 					display: inline-block;
 					max-width: 100%;
 					width: 60%;
 
 					@include media('>=desktop') {
+						width: 80%;
+					}
+
+					@include media('>=wider') {
 						width: auto;
 					}
 				}
@@ -128,6 +211,11 @@
 					@include media('>=desktop') {
 						bottom: -54px;
 					}
+
+					@include media('>=widescreen') {
+						margin-left: -30px;
+						padding-right: 0;
+					}
 				}
 			}
 
@@ -136,11 +224,19 @@
 				top: 50%;
 				transform: translateY(-50%);
 
+				@include media('>=widescreen') {
+					padding-right: 61px;
+				}
+
 				img {
 					max-width: 100%;
 					width: 60%;
 
 					@include media('>=desktop') {
+						width: 80%;
+					}
+
+					@include media('>=wider') {
 						width: auto;
 					}
 				}
@@ -154,56 +250,43 @@
 					right: 0;
 
 					@include media('>=desktop') {
+						transform: rotate(180deg) translateY(95px);
+					}
+
+					@include media('>=widescreen') {
+						right: 61px;
+					}
+
+					@include media('>=wider') {
 						transform: rotate(180deg) translateY(115px);
 					}
 				}
 			}
 		}
 
-		&.board03 {
-			@include media('>=widescreen') {
-				width: 40.6%;
-				margin: 0;
-			}
+		.owl-stage-outer {
+			padding: 74px 0 34px;
+			margin: -44px 0 0;
 
-			.item {
-				padding-top: 95px;
-				padding-right: 0;
-			}
-
-			.rotate {
-				position: absolute;
-				top: 0;
-				left: 90px;
-				right: 0;
-				text-align: center;
-
-				img {
-					width: auto;
-					display: inline-block;
-				}
-			}
-
-			.owl-theme {
-				.owl-dots {
-					@include media('>=widescreen') {
-						padding-right: 0;
-					}
-				}
+			@include media('>=tablet') {
+				padding: 94px 0 54px;
+				margin: -94px 0 0;
 			}
 		}
 
 		.calc-hold {
 			font-size: 15px;
 			line-height: 1.4;
-			display: block;
 			text-align: center;
 			padding-top: 15px;
+			position: absolute;
+			left: 0;
+			right: 0;
 			
 			@include media('>=widescreen') {
-				position: absolute;
 				top: 50%;
 				right: 2px;
+				left: auto;
 				transform: translateY(-50%);
 				text-align: left;
 				padding-top: 0;
@@ -231,7 +314,7 @@
 
 		.owl-dots {
 			@include media('>=widescreen') {
-				padding-right: 115px;
+				padding-right: 61px;
 			}
 
 			.owl-dot {

@@ -19,7 +19,6 @@
 	}
 
 	.text-hold {
-
 		@include media ('>=tablet') {
 			max-width: 50%;
 			flex: 0 0 50%;
@@ -50,78 +49,73 @@
 			margin-right: -118px;
 		}
 	}
-}
 
-.anim-section {
-	@include media ('>=tablet') {
-		padding: 0;
-		position: relative;
-	}
-
-	.anim-section-wrapper {
-		padding: 50px 0;
-
+	&.anim-section {
 		@include media ('>=tablet') {
-			min-height: calc(100vh);
-			height: calc(100vh);
-			display: flex;
-			align-items: center;
-			flex-wrap: wrap;
-			padding: 100px 0;
+			padding: 0;
+			position: relative;
+			overflow: hidden;
 		}
 
 		> .container {
-			flex-wrap: wrap;
-		}
-	}
-
-	.anim-content {
-		@include media ('>=tablet') {
-			display: flex;
-			flex-direction: row-reverse;
-			align-items: center;
-			width: 100%;
-			position: absolute;
-			left: -9999px;
-			top: -9999px;
-			opacity: 0;
-			visibility: hidden;
-			@include animate(opacity visibility);
-		}
-
-		&.content-active {
-			opacity: 1;
-			visibility: visible;
-			position: static;
-		}
-
-		& + & {
-			padding-top: 50px;
-
 			@include media ('>=tablet') {
-				padding-top: 0;
+				flex-wrap: wrap;
 			}
 		}
- 	}
 
-	&.fixed-state {
-		.anim-section-wrapper {
+		.anim-content {
+			padding: 50px 0;
+			position: relative;
+
 			@include media ('>=tablet') {
-				position: fixed;
-				top: 0;
-				left: 0;
+				min-height: calc(100vh);
+				display: flex;
+				align-items: center;
 				width: 100%;
+				padding: 100px 0;
+			}
+
+			.img-hold {
+				@include media ('>=tablet') {
+					position: absolute;
+					opacity: 0;
+					visibility: hidden;
+					left: 50%;
+					top: 50%;
+					transform: translateY(-50%);
+					@include animate(opacity visibility);
+				}
+			}
+
+			&.content-active {
+				.img-hold {
+					@include media ('>=tablet') {
+						opacity: 1;
+						visibility: visible;
+					}
+				}
 			}
 		}
-	}
 
-	&.scroll-state {
-		.anim-section-wrapper {
-			@include media ('>=tablet') {
-				position: absolute;
-				left: 0;
-				bottom: 0;
-				width: 100%;
+		&.fixed-state {
+			.anim-content {
+				.img-hold {
+					@include media ('>=tablet') {
+						position: fixed;
+					}
+				}
+			}
+		}
+
+		&.scroll-state {
+			.content-active {
+				.img-hold {
+					@include media ('>=tablet') {
+						position: absolute;
+						opacity: 1;
+						visibility: visible;
+					}
+				}
 			}
 		}
 	}
