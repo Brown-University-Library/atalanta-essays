@@ -3457,6 +3457,11 @@ html, body {
   .text-hold {
     max-width: 69.2%; } }
 
+.text-hold sup a {
+  color: #da4929; }
+  .text-hold sup a:hover {
+    text-decoration: underline; }
+
 sup {
   font-weight: 700; }
 

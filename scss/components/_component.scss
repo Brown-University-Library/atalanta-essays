@@ -160,6 +160,15 @@
 	@include media ('>=tablet') {
 		max-width: 69.2%;
 	}
+	sup {
+		a {
+			color: $orange;
+	
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
 }
 
 sup {
