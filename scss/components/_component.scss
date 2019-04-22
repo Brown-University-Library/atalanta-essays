@@ -822,6 +822,12 @@ figure {
 		font-size: 15px;
 		display: block;
 	}
+
+	figcaption {
+		em {
+			display: inline-block;
+		}
+	}
 }
 
 .open-book {
