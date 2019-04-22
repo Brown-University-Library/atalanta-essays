@@ -3822,28 +3822,36 @@ p .side-block {
       .side-table tbody .play:hover:after {
         border-left-color: #fff; }
 
+.illustrations {
+  padding: 30px 0; }
+  @media (min-width: 768px) {
+    .illustrations {
+      padding: 120px 0 0; } }
+  .illustrations ul li {
+    padding: 10px 0; }
+
 .sources {
   padding: 30px 0; }
   @media (min-width: 768px) {
     .sources {
-      padding: 117px 0 73px; } }
+      padding: 120px 0 60px; } }
   .sources .sources-wrapper {
     margin-bottom: 40px; }
     @media (min-width: 768px) {
       .sources .sources-wrapper {
-        margin-bottom: 66px; } }
+        margin-bottom: 60px; } }
   .sources h2 {
     margin-bottom: 30px; }
     @media (min-width: 768px) {
       .sources h2 {
-        margin-bottom: 59px; } }
+        margin-bottom: 60px; } }
   .sources .title {
     color: #da4929;
     display: block;
     border-bottom: 1px solid black;
     font-weight: 600;
     padding-bottom: 2px;
-    margin-bottom: 27px; }
+    margin-bottom: 26px; }
   .sources .sources-detail {
     margin-bottom: 32px; }
     .sources .sources-detail span {
