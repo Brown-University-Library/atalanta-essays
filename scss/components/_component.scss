@@ -11,6 +11,12 @@
 		padding-right: 40px;
 	}
 
+	a {
+		section & {
+			border-bottom: 1px solid #658197;
+		}
+	}
+
 	p {
 
 		@include media ('>=tablet') {
