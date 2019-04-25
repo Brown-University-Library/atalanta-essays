@@ -1,7 +1,7 @@
 .sub-header-image {
 	background-size: cover;
 	background-position: 50% 50%;
-	min-height: 490px;
+	min-height: 320px;
 	padding: 80px 0 116px;
 	color: $white;
 	display: flex;
@@ -13,11 +13,17 @@
 		font-size:0;
 	}
 
+	@include media ('>=tablet') {
+		min-height: 490px;
+	}
+
 	h2 {
 		font-family: $base-font-serif;
+		font-size: 45px;
 
 		@include media ('>=tablet') {
-			margin-bottom: 71px;
+			margin-bottom: 0;
+			font-size: 65px;
 		}
 	}
 
@@ -29,5 +35,10 @@
 
 	sup {
 		font-size: 17px;
+	}
+
+	.text-hold {
+		max-width: 100%;
+		text-align: center;
 	}
 }

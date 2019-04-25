@@ -4252,7 +4252,7 @@ figure figcaption em {
 .sub-header-image {
   background-size: cover;
   background-position: 50% 50%;
-  min-height: 490px;
+  min-height: 320px;
   padding: 80px 0 116px;
   color: #fff;
   display: -webkit-box;
@@ -4265,17 +4265,25 @@ figure figcaption em {
     content: '';
     min-height: inherit;
     font-size: 0; }
+  @media (min-width: 768px) {
+    .sub-header-image {
+      min-height: 490px; } }
   .sub-header-image h2 {
-    font-family: "gt_sectra", "Times New Roman", "Times", "Baskerville", "Georgia", serif; }
+    font-family: "gt_sectra", "Times New Roman", "Times", "Baskerville", "Georgia", serif;
+    font-size: 45px; }
     @media (min-width: 768px) {
       .sub-header-image h2 {
-        margin-bottom: 71px; } }
+        margin-bottom: 0;
+        font-size: 65px; } }
   .sub-header-image h3 {
     font-weight: 400;
     line-height: 1.33;
     margin: 0; }
   .sub-header-image sup {
     font-size: 17px; }
+  .sub-header-image .text-hold {
+    max-width: 100%;
+    text-align: center; }
 
 .music-player-with-text {
   background: #000;
