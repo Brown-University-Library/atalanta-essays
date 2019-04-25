@@ -3379,7 +3379,8 @@ html, body {
   .content sup {
     font-size: 13px; }
     .content sup a {
-      color: #da4929; }
+      color: #da4929;
+      border-bottom: none; }
       .content sup a:hover {
         color: #000; }
 
