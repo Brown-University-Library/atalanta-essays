@@ -2085,7 +2085,6 @@ input[type='submit'] {
       font-weight: 400;
       margin: 0;
       padding: 12px 0;
-      max-width: 140px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
