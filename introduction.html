@@ -9,6 +9,10 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
   <script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js" defer><\/script>')</script>
   <script src="js/jquery.main.js" defer></script>
+
+  <link href="https://vjs.zencdn.net/7.5.4/video-js.css" rel="stylesheet">
+  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+
 </head>
 <body>
   <div id="wrapper">
@@ -87,7 +91,13 @@
             </p>
           </div>
           <div class="video">
-            <img src="images/im12.jpg" alt="image description" width="1074" height="348">
+            <video id='my-video' class='video-js' controls preload='auto' width='100%'  poster='/video/AtalantaIntro-poster.jpg' data-setup='{}'>
+              <source src='/video/AtalantaIntro.mp4' type='video/mp4'>
+              <p class='vjs-no-js'>
+                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                <a href='https://videojs.com/html5-video-support/' target='_blank'>supports HTML5 video</a>
+              </p>
+            </video>
           </div>
         </div>
       </section>
