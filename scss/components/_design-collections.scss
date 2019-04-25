@@ -763,19 +763,19 @@
 		position: relative;
 	}
 	.tag-no {
-		padding: 1px;
+		padding: 3px;
 		background-color: #ffb000;
 		border-radius: 50%;
 		display: inline-block;
 		position: absolute;
 		top: 0;
 		left: 55px;
-		font-size: 9.17px;
+		font-size: 10px;
 		color: #333333;
 		cursor: pointer;
 		vertical-align: top;
-		width: 16px;
-		height: 16px;
+		width: 19px;
+		height: 19px;
 
 		&:hover {
 			.tag-detail{
@@ -786,6 +786,7 @@
 		> .tags-count {
 			text-align: center;
 			display: block;
+			font-weight: 600;
 		}
 	}
 
