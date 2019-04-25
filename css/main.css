@@ -3094,9 +3094,6 @@ html, body {
 
 .add-collections img {
   height: auto; }
-  @media (min-width: 1024px) {
-    .add-collections img {
-      height: 462px; } }
 
 .create-collections .collection-detail input {
   width: 100%;
@@ -3286,7 +3283,7 @@ html, body {
     width: 824px; }
 
 .fancybox-content {
-  width: 824px;
+  width: 1024px;
   padding: 0; }
   .fancybox-content .fancybox-close-small {
     color: #e5e5e5;

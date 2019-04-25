@@ -1025,7 +1025,7 @@
 		height: auto;
 
 		@include media('>=desktop') {
-			height: 462px;
+			// height: 462px;
 
 		}
 	}
@@ -1264,7 +1264,7 @@
 }
 
 .fancybox-content {
-	width: 824px;
+	width: 1024px;
 	padding: 0;
 
 	.fancybox-close-small{
