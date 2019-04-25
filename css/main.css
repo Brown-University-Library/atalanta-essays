@@ -4663,11 +4663,13 @@ figure figcaption em {
       margin-right: 44px; } }
   .arcana-hotspot .hotspot04,
   .arcana-hotspot .hotspot05,
-  .arcana-hotspot .hotspot06 {
+  .arcana-hotspot .hotspot06,
+  .arcana-hotspot .hotspot07 {
     z-index: 10; }
     .arcana-hotspot .hotspot04.popup-active .spot-holder,
     .arcana-hotspot .hotspot05.popup-active .spot-holder,
-    .arcana-hotspot .hotspot06.popup-active .spot-holder {
+    .arcana-hotspot .hotspot06.popup-active .spot-holder,
+    .arcana-hotspot .hotspot07.popup-active .spot-holder {
       opacity: 1;
       visibility: visible; }
   .arcana-hotspot .hotspot04 {
@@ -4714,6 +4716,20 @@ figure figcaption em {
         right: 76px; } }
     @media (max-width: 767px) {
       .arcana-hotspot .hotspot06 .spot-holder {
+        left: -225px; } }
+  .arcana-hotspot .hotspot07 {
+    position: absolute;
+    top: 78%;
+    left: 48%;
+    -webkit-transform: translateX(-20px);
+        -ms-transform: translateX(-20px);
+            transform: translateX(-20px); }
+    @media (min-width: 768px) {
+      .arcana-hotspot .hotspot07 {
+        top: 78%;
+        left: 310px; } }
+    @media (max-width: 767px) {
+      .arcana-hotspot .hotspot07 .spot-holder {
         left: -225px; } }
   .arcana-hotspot .figure {
     padding-top: 0;

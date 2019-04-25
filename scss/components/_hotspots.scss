@@ -226,7 +226,8 @@
 
 	.hotspot04,
 	.hotspot05,
-	.hotspot06 {
+	.hotspot06,
+	.hotspot07 {
 		z-index: 10;
 
 		&.popup-active {
@@ -283,6 +284,24 @@
 		@include media('>=tablet') {
 			top: 46.1%;
 			right: 76px;
+		}
+
+		.spot-holder {
+			@include media('<tablet') {
+				left: -225px;
+			}
+		}
+	}
+
+	.hotspot07 {
+		position: absolute;
+		top: 78%;
+		left: 48%;
+		transform: translateX(-20px);
+
+		@include media('>=tablet') {
+			top: 78%;
+			left: 310px;
 		}
 
 		.spot-holder {
