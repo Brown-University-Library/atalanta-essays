@@ -2027,11 +2027,11 @@ input[type='submit'] {
   min-width: 320px;
   z-index: 99989; }
   .fixed-header #header .logo {
-    width: 18px;
+    width: 26px;
     margin: 0; }
     @media (min-width: 768px) {
       .fixed-header #header .logo {
-        width: 20px; } }
+        width: 40px; } }
     .fixed-header #header .logo .dark-logo {
       display: none; }
     .fixed-header #header .logo .light-logo {

@@ -459,11 +459,11 @@
     z-index: 99989;
 
     .logo {
-      width: 18px;
+      width: 26px;
       margin: 0;
 
       @include media('>=tablet') {
-        width: 20px;
+        width: 40px;
       }
 
       .dark-logo {
