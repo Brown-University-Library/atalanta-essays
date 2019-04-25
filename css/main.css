@@ -4943,7 +4943,8 @@ figure figcaption em {
     @media (min-width: 768px) {
       .properties-section .desc {
         margin-bottom: 0;
-        width: 49%; } }
+        width: 49%;
+        padding-left: 15px; } }
   .properties-section .board-holder {
     width: 290px;
     margin: 0 auto 50px; }
