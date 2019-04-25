@@ -3357,7 +3357,7 @@ html, body {
   @media (min-width: 1024px) {
     .content {
       padding-right: 40px; } }
-  section .content a {
+  section .content p a {
     border-bottom: 1px solid #658197; }
   @media (min-width: 768px) {
     .content p {

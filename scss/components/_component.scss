@@ -11,9 +11,11 @@
 		padding-right: 40px;
 	}
 
-	a {
-		section & {
-			border-bottom: 1px solid #658197;
+	section & {
+		p {
+			a {
+				border-bottom: 1px solid #658197;
+			}
 		}
 	}
 
