@@ -1513,7 +1513,7 @@ html {
 body {
   color: #333;
   background: #fff;
-  font: 16px/1.38 "gt_america", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+  font: 16px/1.6 "gt_america", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
   min-width: 320px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
