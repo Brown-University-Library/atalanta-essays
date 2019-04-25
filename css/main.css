@@ -2916,7 +2916,7 @@ html, body {
     border-radius: 50%;
     display: inline-block;
     position: absolute;
-    top: 0;
+    top: -2px;
     left: 55px;
     font-size: 10px;
     color: #333333;
