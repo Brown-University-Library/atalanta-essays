@@ -361,7 +361,7 @@ function getImgSize() {
 }
 
 // init append collection
-function initAppendCollection(obj) {
+function initAppendCollection(obj, newState) {
 	var mainHolder = jQuery('.all-collections');
 	var gridsHolder = mainHolder.find('.grids-content');
 	var path = 'templates/collection/collection.html';
@@ -384,7 +384,7 @@ function initAppendCollection(obj) {
 
 					for (var j = 0; j < emblemsLength; j++) {
 						var id = ('0' + parseFloat(emblems[j]).toString()).slice(-2);
-						initAppendEmblem(id, index, j, emblems.length, size, true);
+						initAppendEmblem(id, index, j, emblems.length, size, true, newState);
 					}
 				} else {
 					var arr = initGetCollections();
@@ -443,7 +443,7 @@ function initAddCollectionFromUrl() {
 }
 
 // init json test
-function initAppendEmblem(id, index, counter, max, size, scrollFlag) {
+function initAppendEmblem(id, index, counter, max, size, scrollFlag, newState) {
 	var path = 'json/atalanta-emblems.json';
 	var template = jQuery('#template');
 	var data = {
@@ -484,9 +484,15 @@ function initAppendEmblem(id, index, counter, max, size, scrollFlag) {
 				});
 				jQuery('.collection-wrapper').eq(index).find('.image-collection').append($rendered);
 				if (scrollFlag) {
+					var scrollOffset = 0;
 					jQuery('.js-btns .btn-up').trigger('click');
 					setTimeout(function() {
-						jQuery('.all-collections').scrollTop(jQuery('.collection-wrapper').eq(index).find('.image-collection').find($rendered).position().top)
+						if (newState) {
+							scrollOffset = 0;
+						} else {
+							scrollOffset = jQuery('.collection-wrapper').eq(index).find('.image-collection').find($rendered).position().top;
+						}
+						jQuery('.all-collections').stop().scrollTop(scrollOffset)
 					}, 500);
 					
 				}
@@ -1039,6 +1045,10 @@ function initFancybox() {
 						if (createForm.length) {
 							var input = createForm.find('input[type="text"]');
 
+							if (opener.data('collectionName') && opener.data('collectionName').length) {
+								input.val(opener.data('collectionName'));
+							}
+
 							input.on('focus keyup', function() {
 								input.removeClass(errorclass);
 								errorField.empty();
@@ -1070,7 +1080,7 @@ function initFancybox() {
 										}
 
 										initAddCollection(initGetCollections(), obj);
-										initAppendCollection(obj);
+										initAppendCollection(obj, true);
 										if (jQuery('.side-popup').length) {
 											jQuery('.side-popup').find('.close').trigger('click');
 										}
@@ -1092,7 +1102,6 @@ function initFancybox() {
 						var newName = instance.$trigger.closest('[data-emblem-id]').find('.name').text();
 						var curCollections = initGetCollections();
 						var newSrc;
-
 
 						if (instance.$trigger.data('addId').toString().split(',').length > 1) {
 							var newStr = instance.$trigger.data('addId').replace(/,/g, ', ')

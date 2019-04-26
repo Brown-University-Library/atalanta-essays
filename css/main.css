@@ -3100,7 +3100,7 @@ html, body {
   width: 100%;
   margin-bottom: 10px;
   border-bottom: none;
-  color: #cccccc;
+  color: #666;
   height: 49px;
   margin-bottom: 15px;
   padding: 5px 17px; }
@@ -3180,7 +3180,8 @@ html, body {
 
 .copy-collections .link-holder {
   position: relative;
-  word-break: break-all; }
+  word-break: break-all;
+  margin-bottom: 10px; }
 
 .copy-collections .copy-info-popup {
   -webkit-transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
@@ -3208,8 +3209,11 @@ html, body {
   opacity: 1;
   visibility: visible; }
 
+.popup .copy-collections .title {
+  margin-bottom: 25px; }
+
 .copy-collections .link {
-  background-color: #798a8a;
+  background-color: transparent;
   padding: 0 2px;
   font-size: 20px;
   word-break: break-all;
