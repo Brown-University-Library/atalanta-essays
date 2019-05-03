@@ -3363,6 +3363,8 @@ html, body {
       padding-right: 40px; } }
   section .content p a {
     border-bottom: 1px solid #658197; }
+  section .content p sup a {
+    border-bottom: none; }
   @media (min-width: 768px) {
     .content p {
       margin-bottom: 1.6em; } }
