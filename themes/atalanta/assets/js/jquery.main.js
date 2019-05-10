@@ -694,12 +694,12 @@ function initSidePopups() {
 					'<div class="side-popup emblem">' +
 					'<div class="holder">' +
 					'<figure class="figure">' +
-					'<img src="images/emblems/' + cropSize + '/emblem' + ('0' + opener.data('emblemId')).slice(-2) + '.' + cropSize + '.jpg" alt="' + opener.text() + '">' +
+					'<img src="/images/emblems/' + cropSize + '/emblem' + ('0' + opener.data('emblemId')).slice(-2) + '.' + cropSize + '.jpg" alt="' + opener.text() + '">' +
 					'<figcaption>' +
 					'<span class="title">Emblem ' + opener.data('emblemId') + '</span>' +
 					'<a href="templates/modals/modal-add.html" data-link="add" data-type="ajax" class="lightbox add">' +
-					'<img src="images/icon-add.png" alt="add" width="26" height="25" class="default">' +
-					'<img src="images/icon-add02.png" alt="add" width="26" height="25" class="hover">' +
+					'<img src="/images/icon-add.png" alt="add" width="26" height="25" class="default">' +
+					'<img src="/images/icon-add02.png" alt="add" width="26" height="25" class="hover">' +
 					'<span class="call-out">Add to Collection</span>' +
 					'</a>' +
 					'</figcaption>' +
@@ -1026,7 +1026,7 @@ function initFancybox() {
 						var nameField = current.$content.find('.image-name');
 						var cropSize = '960';
 						var newName = holder.find('.name').text();
-						var newSrc = 'images/emblems/' + cropSize + '/emblem' + ('0' + holder.data('emblemId')).slice(-2) + '.' + cropSize + '.jpg';
+						var newSrc = '/images/emblems/' + cropSize + '/emblem' + ('0' + holder.data('emblemId')).slice(-2) + '.' + cropSize + '.jpg';
 						var tagsHolder = holder.find('.tag-wrapper .slide');
 
 						$img.attr('src', newSrc);
@@ -1106,11 +1106,11 @@ function initFancybox() {
 						if (instance.$trigger.data('addId').toString().split(',').length > 1) {
 							var newStr = instance.$trigger.data('addId').replace(/,/g, ', ')
 							nameField.text('Emblems ' + newStr);
-							newSrc = 'images/emblems/' + cropSize + '/emblem' + ('0' + instance.$trigger.data('addId').substr(0, instance.$trigger.data('addId').indexOf(','))).slice(-2) + '.' + cropSize + '.jpg';
+							newSrc = '/images/emblems/' + cropSize + '/emblem' + ('0' + instance.$trigger.data('addId').substr(0, instance.$trigger.data('addId').indexOf(','))).slice(-2) + '.' + cropSize + '.jpg';
 							$img.attr('src', newSrc);
 						} else {
 							nameField.text('Emblems ' + parseFloat(instance.$trigger.data('addId')));
-							newSrc = 'images/emblems/' + cropSize + '/emblem' + ('0' + instance.$trigger.data('addId')).slice(-2) + '.' + cropSize + '.jpg';
+							newSrc = '/images/emblems/' + cropSize + '/emblem' + ('0' + instance.$trigger.data('addId')).slice(-2) + '.' + cropSize + '.jpg';
 							$img.attr('src', newSrc);
 						}
 

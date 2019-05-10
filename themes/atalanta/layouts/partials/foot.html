@@ -2,7 +2,11 @@
   <script id="template" type="x-tmpl-mustache">
     <div class="image-description" data-emblem-id="{{ "{{ id }}" }}">
       <div class="image-holder" data-thing="{{ "{{size}}" }}">
-        <img src='/images/emblems/{{ "{{size}}" }}/emblem{{ "{{id}}" }}.{{ "{{size}}" }}.jpg' alt="image-description">
+
+          
+          {{ safeHTML "<img src=\"/images/emblems/{{size}}/emblem{{id}}.{{size}}.jpg\" >" }}
+
+       
         <div class="drag-image">
           <div class="drag-icon">
             <img src="/images/drag-icon.png" alt="drag-icon">

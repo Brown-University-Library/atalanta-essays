@@ -22,7 +22,7 @@
   <div class="header-area">
     <section class="header-banner">
       <div class="container">
-        <h1>{{ .Title }}</h1>
+        <h1>{{ with .Title }}{{ . | safeHTML }}{{ end }}</h1>
         <div class="caption">
           <h4>{{ with .Params.Caption }}{{ . | safeHTML }}{{ end }}</h4>
           <span class="by">by {{ .Params.Author }}</span>
