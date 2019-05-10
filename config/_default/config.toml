@@ -1,0 +1,14 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Atalanta Fugiens"
+theme = "atalanta"
+assetDir = "assets"
+disableLiveReload = true
+disableKinds = [
+  "taxonomy",
+  "taxonomyTerm",
+  "RSS",
+  "sitemap",
+  "robotsTXT",
+  "404"
+]

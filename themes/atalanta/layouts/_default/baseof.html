@@ -1,0 +1,13 @@
+{{ partial "head.html" . }}
+
+  <div id="wrapper">
+    
+    {{ partial "header.html" . }}
+
+    {{ block "main" . -}}{{- end }}
+
+    {{ partial "footer.html" . }}
+
+  </div>
+
+{{ partial "foot.html" . }}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {{ .Hugo.Generator }}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{ if .IsHome -}}
+    <title>{{ .Site.Title }}</title>
+    {{- else -}}
+    <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+    {{- end }}
+
+    {{ $options := (dict "targetPath" "css/style.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+    {{ $style := resources.Get "scss/main.scss" | toCSS $options | postCSS (dict "use" "autoprefixer") | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+
+    {{ $jquery := resources.Get "js/jquery-3.3.1.min.js" }}
+    {{ $main := resources.Get "js/jquery.main.js" }}
+    {{ $js := slice $jquery $main | resources.Concat "js/bundle.js" | minify | fingerprint }}
+
+    <script src="{{ $js.Permalink }}" defer></script>
+</head>
+<body>

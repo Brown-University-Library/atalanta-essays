@@ -1,7 +1,21 @@
+# Build Tools / Files
+node_modules
+
+# Hugo output directories
+/public
+/resources
+
+# OS Files
+
+## OSX
+.DS_Store
+
+## Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
 # Misc Development Files
 .csscomb.json
 package-lock.json
-
-# Build Tools / Files
-node_modules
