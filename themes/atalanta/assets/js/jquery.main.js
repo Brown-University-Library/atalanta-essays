@@ -27,7 +27,7 @@ function initMagnify() {
 	jQuery('.zoom').magnify();	
 }
 
-// init anim section
+// Slider for animated section.
 function initAnimSectionSlider() {
 	var sections = jQuery('.properties-section:has(.board-slider)');
 	
@@ -52,7 +52,7 @@ function initAnimSectionSlider() {
 	});
 }
 
-// init anim section
+// Init animated section.
 function initAnimSection() {
 	jQuery('.anim-section').each(function() {
 		var section = jQuery(this);
@@ -73,7 +73,7 @@ function initAnimSection() {
 	});
 }
 
-// handle dropdowns on mobile devices
+// Handle dropdowns on mobile devices.
 function initTouchNav(holder) {
 	holder.find('.image-collection:has(.image-description)').each(function() {
 		new TouchNav({
@@ -83,7 +83,7 @@ function initTouchNav(holder) {
 	});
 }
 
-// init cookies detect
+// Detect Cookies.
 function initCookiesDetect() {
 	var $doc = jQuery(document);
 	var $body = jQuery('body');
@@ -109,7 +109,7 @@ function initCookiesDetect() {
 	});
 }
 
-// init get same tags
+// Get same tags for emblems in collection.
 function getSameTags(holder) {
 	var imgHolders = holder.find('.image-description');
 	var imgTags = holder.find('.tag-wrapper .slide li');
@@ -159,7 +159,7 @@ function getSameTags(holder) {
 	});
 }
 
-// init sticky collections
+// Init the sticky collections drawer.
 function initStickyCollections() {
 	var $html = jQuery('html');
 	var $body = jQuery('body');
@@ -278,13 +278,13 @@ function initStickyCollections() {
 	});
 }
 
-// init add collection
+// Add a new collection.
 function initAddCollection(arr, obj) {
 	arr.unshift(obj);
 	localStorage.setItem('atalanta_emblems', JSON.stringify(arr));
 }
 
-// init refresh collections
+// Refresh existing collections.
 function refreshCollections() {
 	var arr = [];
 	jQuery('.all-collections .collection-wrapper').each(function() {
@@ -309,7 +309,7 @@ function refreshCollections() {
 	localStorage.setItem('atalanta_emblems', JSON.stringify(arr));
 }
 
-// init add emblem
+// Add emblem to collection.
 function initAddEmblem(name, arr) {
 	var curCollections = initGetCollections();
 	var curCollectionsLength = curCollections.length;
@@ -327,7 +327,7 @@ function initAddEmblem(name, arr) {
 	localStorage.setItem('atalanta_emblems', JSON.stringify(curCollections));
 }
 
-// init get collections
+// Get collections.
 function initGetCollections() {
 	var keyName = 'atalanta_emblems';
 	var storageData = localStorage.getItem(keyName);
@@ -360,7 +360,7 @@ function getImgSize() {
 	return size;
 }
 
-// init append collection
+// Append collection to existing collections.
 function initAppendCollection(obj, newState) {
 	var mainHolder = jQuery('.all-collections');
 	var gridsHolder = mainHolder.find('.grids-content');
@@ -410,7 +410,7 @@ function initAppendCollection(obj, newState) {
 	}
 }
 
-// init get collection from url
+// Get collection from shared url data.
 function initAddCollectionFromUrl() {
 	if (window.location.href.indexOf('#collection_name') !== -1) {
 		var url = window.location.href.substr(0, window.location.href.indexOf('#collection_name'));
@@ -442,7 +442,7 @@ function initAddCollectionFromUrl() {
 	}
 }
 
-// init json test
+// Init load of Atalanta emblem JSON.
 function initAppendEmblem(id, index, counter, max, size, scrollFlag, newState) {
 	var path = '/json/atalanta-emblems.json';
 	var template = jQuery('#template');
@@ -506,7 +506,7 @@ function initAppendEmblem(id, index, counter, max, size, scrollFlag, newState) {
 	}
 }
 
-// init grids
+// Init grids.
 function initGrids() {
 	var selectedClass = 'selected';
 
@@ -569,7 +569,7 @@ function initGrids() {
 	});
 }
 
-// init collection states
+// Init collection states.
 function initCollectionStates(item) {
 	var holders;
 	var hiddeClass = 'hidden';
@@ -592,7 +592,7 @@ function initCollectionStates(item) {
 	});
 }
 
-// init remove function
+// Remove emblem from collection.
 function initRemove() {
 	var $doc = jQuery(document);
 
@@ -608,7 +608,7 @@ function initRemove() {
 	});
 }
 
-// init sort
+// Init emblem sorting functionality in collection.
 function initSort() {
 	jQuery('.image-collection').each(function() {
 		var item = jQuery(this);
@@ -623,7 +623,7 @@ function initSort() {
 	});
 }
 
-// init sticky block
+// Init sticky block.
 function initStickyBlock() {
 	var $win = jQuery(window);
 	var $body = jQuery('body');
@@ -661,7 +661,7 @@ function initStickyBlock() {
 	$win.on('scroll', scrollHandler);
 }
 
-// init side popups
+// Init side popups.
 function initSidePopups() {
 	var $doc = jQuery(document);
 	var $win = jQuery(window);
@@ -777,7 +777,7 @@ function initSidePopups() {
 	$win.on('resize orientationchange', resizeHandler);
 }
 
-// init side blocks
+// Init side blocks.
 function initSideBlocks() {
 	var $win = jQuery(window);
 
@@ -832,7 +832,7 @@ function initSideBlocks() {
 	});
 }
 
-// init anim circles
+// Init animated circles.
 function initAnimCircles() {
 	jQuery('.anim-circles-section').each(function() {
 		var animSection = jQuery(this);
@@ -855,7 +855,7 @@ function initAnimCircles() {
 	});
 }
 
-// init owl carousel
+// Init owl carousel.
 function initOwlCarousel() {
 	jQuery('.waies-carousel').owlCarousel({
 		loop:false,
@@ -907,7 +907,7 @@ function initOwlCarousel() {
 	});
 }
 
-// popups init
+// Init popups.
 function initPopups() {
 	jQuery('[class*="hotspot"]:has(> .spot-holder)').contentPopup({
 		mode: 'hover',
@@ -920,7 +920,7 @@ function initPopups() {
 	});
 }
 
-// initialize smooth anchor links
+// Init smooth anchor links.
 function initAnchors() {
 	new SmoothScroll({
 		anchorLinks: '.anchor',
@@ -975,7 +975,7 @@ function initOpenClose() {
 	});
 }
 
-// mobile menu init
+// Init mobile menu.
 function initMobileNav() {
 	jQuery('body').mobileNav({
 		menuActiveClass: 'nav-active',
@@ -983,7 +983,7 @@ function initMobileNav() {
 	});
 }
 
-// content tabs init
+// Init content tabs.
 function initTabs() {
 	jQuery('.tabset').tabset({
 		tabLinks: 'a',
@@ -992,7 +992,7 @@ function initTabs() {
 	});
 }
 
-// lightbox init
+// Init lightbox.
 function initFancybox() {
 	jQuery('a.lightbox, [data-fancybox]').fancybox({
 		parentEl: 'body',
