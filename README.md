@@ -1,4 +1,4 @@
-![Atalanta fugiens](http://atalanta.dev.jakeandco.com/images/logo.png)
+![Furnace & Fugue](http://atalanta.dev.jakeandco.com/images/logo.png)
 
 The F&F site development uses Hugo, a static HTML and CSS website generator written in Go.
 
