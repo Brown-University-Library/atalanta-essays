@@ -52,13 +52,13 @@
 
 	.hotspot02 {
 		position: absolute;
-		top: 50%;
+		top: 56%;
 		left: 35px;
 		transform: translateY(-20px);
 		z-index: 2;
 
 		@include media('>=tablet') {
-			left: 109px;
+			left: 300px;
 			transform: translateY(-31px);
 		}
 
@@ -72,7 +72,7 @@
 	.hotspot03 {
 		position: absolute;
 		bottom: 60px;
-		right: 50%;
+		right: 26%;
 		transform: translateX(-100%);
 		z-index: 1;
 
@@ -83,7 +83,7 @@
 
 		@include media('>=desktop') {
 			transform: translateX(-344%);
-			bottom: 199px;
+			bottom: 350px;
 		}
 
 		.spot-holder {
