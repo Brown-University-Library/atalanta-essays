@@ -183,7 +183,7 @@ function getSameTags(holder) {
 }
 
 // Init the sticky collections drawer.
-function initStickyCollections() {
+function initStickyCollections(activate) {
 	var $html = jQuery('html');
 	var $body = jQuery('body');
 	var activeClass = 'emblems-active';
@@ -299,6 +299,7 @@ function initStickyCollections() {
 			});
 		}
 	});
+
 }
 
 // Add a new collection.
@@ -438,6 +439,43 @@ function initAddCollectionFromUrl() {
 	if (window.location.href.indexOf('#collection_name') !== -1) {
 		var url = window.location.href.substr(0, window.location.href.indexOf('#collection_name'));
 		var obj;
+		var $html = jQuery('html');
+		var $body = jQuery('body');
+		var activeClass = 'emblems-active';
+		var classHalf = 'half-state';
+		var classFull = 'full-state';
+		var container = jQuery('.collections-wrapper');
+		var collectionsHolder = container.find('.all-collections');
+		var openerHolder = container.find('.opener-holder');
+		var btnsHolder = container.find('.js-btns');
+		var btnUp = btnsHolder.find('.btn-up');
+		var btnDown = btnsHolder.find('.btn-down');
+		var btnClose = btnsHolder.find('.btn-close');
+
+		function getFullHeight() {
+			var fullHeight = 0;
+
+			if ($body.hasClass('fixed-header')) {
+				fullHeight = jQuery('#header .header-wrap').outerHeight();
+			}
+
+			return fullHeight;
+		}
+
+		function setFullState() {
+			$html
+				.addClass(classFull)
+				.removeClass(classHalf);
+
+			container.css({
+				'top': getFullHeight() + openerHolder.outerHeight() + 'px',
+				'bottom': 0 + 'px',
+				'marginTop': 0
+			});
+		}
+		
+		setFullState();
+		$html.addClass(activeClass);
 
 		if (window.location.href.indexOf('&emblems') !== -1) {
 			obj = {
@@ -463,6 +501,7 @@ function initAddCollectionFromUrl() {
 			initAddCollection(initGetCollections(), obj);
 		}
 	}
+
 }
 
 // Init load of Atalanta emblem JSON.
