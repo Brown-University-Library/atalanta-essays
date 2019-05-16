@@ -21,7 +21,30 @@ jQuery(function() {
 	initAnimSection();
 	initAnimSectionSlider();
 	initMagnify();
+	initAudioPlayer();
 });
+
+function initAudioPlayer() {
+
+    let audio = document.getElementById('audio-source'),
+        playButton = document.getElementById('play-button'),
+        volumeSlider = document.getElementById('volume-slider');
+      
+    playButton.onclick = function() {
+      if (audio.paused) {
+        audio.play();
+        playButton.innerHTML = '❚❚';
+      } else {
+        audio.pause();
+        playButton.innerHTML = '▶';
+      }
+    }
+
+    // volumeSlider.onchange = function() {
+    //  audio.volume = this.value;
+    // }
+
+}
 
 function initMagnify() {
 	jQuery('.zoom').magnify();	

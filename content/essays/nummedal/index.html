@@ -674,7 +674,28 @@ sections:
         footsteps of nature.<sup><a href="#" class="foot-note"
             data-text-content='I follow the analysis of the music in Fugue 42 from Streich, “Introduction,” 56.'>36</a></sup>
       </p>
-      <p><strong>music player goes here</strong></p>
+      
+      <div id="audio-player">
+        <button id="play-button">
+          ▶
+        </button>
+        <div class="audio-title">
+          <em>[Title for Emblem 42 music]</em>
+          <div>
+            [Some secondary notes]
+            <!-- 
+            <label id="volume-label" for="audio-volume">Volume</label>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1"> -->
+          </div>
+        </div>
+      </div>
+        
+      <audio id="audio-source">
+        <source src="http://cds.library.brown.edu/projects/atl-music-player/assets/audio/snippets/42_all.mp3" 
+                type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+
     </div>
   </div>
 </section>
