@@ -1132,7 +1132,7 @@ function initFancybox() {
 							newSrc = '/images/emblems/' + cropSize + '/emblem' + ('0' + instance.$trigger.data('addId').substr(0, instance.$trigger.data('addId').indexOf(','))).slice(-2) + '.' + cropSize + '.jpg';
 							$img.attr('src', newSrc);
 						} else {
-							nameField.text('Emblems ' + parseFloat(instance.$trigger.data('addId')));
+							nameField.text('Emblem ' + parseFloat(instance.$trigger.data('addId')));
 							newSrc = '/images/emblems/' + cropSize + '/emblem' + ('0' + instance.$trigger.data('addId')).slice(-2) + '.' + cropSize + '.jpg';
 							$img.attr('src', newSrc);
 						}
