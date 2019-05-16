@@ -1,0 +1,32 @@
+#audio-player {
+  padding: 0;
+  margin: 0;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+}
+
+#play-button {
+  background: #ffae00;
+  width: 3em;
+  height: 3em;
+  line-height: 3em;
+  color: black;
+  font-size: 150%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.audio-title {
+  text-align: left;
+  padding-left: 1em;
+}
+
+.audio-title label {
+  font-size: 80%;
+}

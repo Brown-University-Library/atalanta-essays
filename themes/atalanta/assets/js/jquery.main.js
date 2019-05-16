@@ -21,7 +21,30 @@ jQuery(function() {
 	initAnimSection();
 	initAnimSectionSlider();
 	initMagnify();
+	initAudioPlayer();
 });
+
+function initAudioPlayer() {
+
+    let audio = document.getElementById('audio-source'),
+        playButton = document.getElementById('play-button'),
+        volumeSlider = document.getElementById('volume-slider');
+      
+    playButton.onclick = function() {
+      if (audio.paused) {
+        audio.play();
+        playButton.innerHTML = '❚❚';
+      } else {
+        audio.pause();
+        playButton.innerHTML = '▶';
+      }
+    }
+
+    // volumeSlider.onchange = function() {
+    //  audio.volume = this.value;
+    // }
+
+}
 
 function initMagnify() {
 	jQuery('.zoom').magnify();	
@@ -697,7 +720,7 @@ function initSidePopups() {
 					'<img src="/images/emblems/' + cropSize + '/emblem' + ('0' + opener.data('emblemId')).slice(-2) + '.' + cropSize + '.jpg" alt="' + opener.text() + '">' +
 					'<figcaption>' +
 					'<span class="title">Emblem ' + opener.data('emblemId') + '</span>' +
-					'<a href="templates/modals/modal-add.html" data-link="add" data-type="ajax" class="lightbox add">' +
+					'<a href="/templates/modals/modal-add.html" data-link="add" data-type="ajax" class="lightbox add">' +
 					'<img src="/images/icon-add.png" alt="add" width="26" height="25" class="default">' +
 					'<img src="/images/icon-add02.png" alt="add" width="26" height="25" class="hover">' +
 					'<span class="call-out">Add to Collection</span>' +
@@ -1109,7 +1132,7 @@ function initFancybox() {
 							newSrc = '/images/emblems/' + cropSize + '/emblem' + ('0' + instance.$trigger.data('addId').substr(0, instance.$trigger.data('addId').indexOf(','))).slice(-2) + '.' + cropSize + '.jpg';
 							$img.attr('src', newSrc);
 						} else {
-							nameField.text('Emblems ' + parseFloat(instance.$trigger.data('addId')));
+							nameField.text('Emblem ' + parseFloat(instance.$trigger.data('addId')));
 							newSrc = '/images/emblems/' + cropSize + '/emblem' + ('0' + instance.$trigger.data('addId')).slice(-2) + '.' + cropSize + '.jpg';
 							$img.attr('src', newSrc);
 						}
