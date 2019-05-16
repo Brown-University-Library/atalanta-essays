@@ -720,7 +720,7 @@ function initSidePopups() {
 					'<img src="/images/emblems/' + cropSize + '/emblem' + ('0' + opener.data('emblemId')).slice(-2) + '.' + cropSize + '.jpg" alt="' + opener.text() + '">' +
 					'<figcaption>' +
 					'<span class="title">Emblem ' + opener.data('emblemId') + '</span>' +
-					'<a href="templates/modals/modal-add.html" data-link="add" data-type="ajax" class="lightbox add">' +
+					'<a href="/templates/modals/modal-add.html" data-link="add" data-type="ajax" class="lightbox add">' +
 					'<img src="/images/icon-add.png" alt="add" width="26" height="25" class="default">' +
 					'<img src="/images/icon-add02.png" alt="add" width="26" height="25" class="hover">' +
 					'<span class="call-out">Add to Collection</span>' +
