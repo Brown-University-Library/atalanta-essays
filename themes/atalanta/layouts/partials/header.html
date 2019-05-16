@@ -30,14 +30,16 @@
       </div>
       <div class="header-bg" style="background-image: url({{ .Params.Background }});"></div>
     </section>
-    <div class="page-anchor">
-      <div class="container">
-        <ol>
-          {{ range .Params.Sections }}
-          {{ with . }}{{ . | safeHTML }}{{ end }}
-          {{ end }}
-        </ol>
+    {{ if .Params.Sections }}
+      <div class="page-anchor">
+        <div class="container">
+          <ol>
+            {{ range .Params.Sections }}
+            {{ with . }}{{ . | safeHTML }}{{ end }}
+            {{ end }}
+          </ol>
+        </div>
       </div>
-    </div>
+    {{ end }}
   </div>
 </header>
