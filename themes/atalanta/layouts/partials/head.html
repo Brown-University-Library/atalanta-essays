@@ -19,4 +19,4 @@
     {{ $js := slice $jquery $main | resources.Concat "js/bundle.js" | minify | fingerprint }}
     <script src="{{ $js.Permalink }}" defer></script>
 </head>
-<body>
+<body id="top">

@@ -354,6 +354,10 @@
     margin-bottom: 23px;
     word-wrap: break-word;
 
+    a {
+      color: #fff;
+    }
+
     @include media('>=tablet') {
       margin-bottom: 67px;
     }
@@ -568,6 +572,10 @@
         overflow: hidden;
         text-overflow: ellipsis;
         margin-right: 7px;
+
+        a {
+          color: #fff;
+        }
       }
 
       .caption {
