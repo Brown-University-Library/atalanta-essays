@@ -33,7 +33,8 @@
     {{ if .Params.Sections }}
       <div class="page-anchor">
         <div class="container">
-          <ol>
+          {{ $sectionCount := len .Params.Sections }}
+          <ol {{ if gt $sectionCount 5 }}class="extended-anchors"{{ end }}>
             {{ range .Params.Sections }}
             {{ with . }}{{ . | safeHTML }}{{ end }}
             {{ end }}

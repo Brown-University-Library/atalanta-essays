@@ -188,6 +188,17 @@
     margin: 0 -5px;
     list-style: none;
 
+    &.extended-anchors {
+      justify-content: flex-start;
+
+      li {
+        @include media('>=tablet') {
+          margin-right: 36px;
+          max-width: 360px;
+        }
+      }
+    }
+
     @include media('>=tablet') {
       justify-content: space-between;
       align-items: flex-start;
