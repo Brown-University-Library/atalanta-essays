@@ -876,6 +876,12 @@ figure {
 	
 	.figure {
 		margin-bottom: 43px;
+
+		figcaption {
+			.title {
+				color: #fff;
+			}
+		}
 	}
 }
 
