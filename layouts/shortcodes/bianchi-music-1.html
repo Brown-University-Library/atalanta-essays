@@ -101,11 +101,38 @@
                         g.label {
                             font-weight: normal;
                         }
-                        
-
-                        
-
-                        
+                        .highlight-box {
+                            fill-opacity: 0.3;
+                            stroke: none;
+                            transition: fill-opacity 1s;
+                        }
+                        .music.playing .highlight-box {
+                            fill-opacity: 0.06;
+                        }
+                        .music.playing .highlight-box.highlighted {
+                            fill-opacity: 0.2;
+                        }
+                        .highlight-box-label {
+                            text-anchor: middle;
+                            font-style: normal;
+                            font-variant: normal;
+                            font-weight: bold;
+                            font-stretch: normal;
+                            font-size: 11.25px;
+                            line-height: 125%;
+                            font-family: sans-serif;
+                            -inkscape-font-specification: 'sans-serif, Bold';
+                            text-align: start;
+                            writing-mode: lr-tb;
+                            transition: fill-opacity 1s;
+                            transition-delay: 0.5s;
+                        }
+                        .music.playing .highlight-box-label {
+                            fill-opacity: 0.06;
+                        }
+                        .music.playing .highlight-box-label.highlighted {
+                            fill-opacity: 1.0;
+                        }
                         #svg4226 {
                             opacity: 0.7;
                         }
