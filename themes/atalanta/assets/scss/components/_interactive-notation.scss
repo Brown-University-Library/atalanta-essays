@@ -1,0 +1,136 @@
+#bianchi-music-1 {
+	height: 40vh;
+}
+.interactive-notation {
+	.music {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+
+		-webkit-flex-flow: row wrap;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row;
+		margin: 0;
+		padding: 15px 0 0 0;
+	}
+
+	.music audio { 
+		display: none;
+	}
+	.music .play-button {
+		background: $yellow;
+		width: 4em;
+		height: 36vh;
+		line-height: 3em;
+		color: black;
+		font-size: 150%;
+		text-align: center;
+		cursor: pointer;
+	}
+	.music .play-button:active,
+	.music .play-button:focus {
+		background: $orange;
+		outline: none;
+	}
+
+	.music .play-button.paused, .music .play-button.playing {
+		display: block;
+	}
+
+	.music .cmn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding-top: 10px;
+		width: 100%;
+	}
+
+    .highlight-box {
+        fill-opacity: 0.3;
+        stroke: none;
+        transition: fill-opacity 1s;
+    }
+    .music.playing .highlight-box {
+        fill-opacity: 0.06;
+    }
+    .music.playing .highlight-box.highlighted {
+        fill-opacity: 0.2;
+    }
+	#highlight-box-1 {
+        fill: $green_desaturated;
+    }
+	#highlight-box-2 {
+		fill: $yellow;
+	}
+    #highlight-box-3 {
+        fill: $blue_desaturated;
+    }
+    #highlight-box-4 {
+        fill: $red_desaturated;
+    }
+    .highlight-box-label {
+        text-anchor: middle;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: bold;
+        font-stretch: normal;
+        font-size: 11.25px;
+        line-height: 125%;
+        font-family: sans-serif;
+        -inkscape-font-specification: 'sans-serif, Bold';
+        text-align: start;
+        writing-mode: lr-tb;
+        transition: fill-opacity 1s;
+        transition-delay: 0.5s;
+    }
+    .music.playing .highlight-box-label {
+        fill-opacity: 0.06;
+    }
+    .music.playing .highlight-box-label.highlighted {
+        fill-opacity: 1.0;
+    }
+
+	/* parallel fifths icons */
+    #path5800, 
+    #path6340, 
+    #path6344, 
+    #path5815 {
+    	stroke: $green_desaturated;
+    }
+    #path6344, 
+    #path5815 {
+    	fill: $green_desaturated;
+    }
+
+	/* parallel octaves icons */
+    #path6683, 
+    #path7013, 
+    #path6687, 
+    #path7017 {
+    	stroke: $yellow_inverse;
+    }
+    #path6687, 
+    #path7017 {
+    	fill: $yellow_inverse;
+    }
+
+	/* parallel fifths and octaves icons */
+    #path7397, 
+    #path7739, 
+    #path7743, 
+    #path7401 {
+    	stroke: $orange;
+    }
+    #path7743, 
+    #path7401 {
+    	fill: $orange;
+    }
+
+	.music .note.highlighted {
+		fill: $yellow_inverse;
+		stroke-width: 120%;
+	}
+}
