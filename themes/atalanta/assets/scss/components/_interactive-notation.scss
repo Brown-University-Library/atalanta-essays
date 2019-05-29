@@ -1,5 +1,19 @@
 #bianchi-music-1 {
-	height: 40vh;
+	height: 17rem;
+}
+#bianchi-music-2 {
+	height: 16rem;
+	.interactive-notation .music .cmn {
+		margin-left: 2em;
+		margin-top: -10px;
+		padding-top: 0;
+	}
+	.interactive-notation .music .cmn > svg {
+		width: 100%;
+	}
+	.interactive-notation .music .play-button {
+		height: 14rem;
+	}
 }
 .interactive-notation {
 	.music {
@@ -14,7 +28,7 @@
 		justify-content: center;
 		flex-direction: row;
 		margin: 0;
-		padding: 15px 0 0 0;
+		padding: .875rem 0 0 0;
 	}
 
 	.music audio { 
@@ -23,7 +37,7 @@
 	.music .play-button {
 		background: $yellow;
 		width: 4em;
-		height: 36vh;
+		height: 14.5rem;
 		line-height: 3em;
 		color: black;
 		font-size: 150%;
@@ -32,7 +46,7 @@
 	}
 	.music .play-button:active,
 	.music .play-button:focus {
-		background: $orange;
+		background: $light-blue;
 		outline: none;
 	}
 
@@ -44,7 +58,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding-top: 10px;
+		padding-top: 1rem;
 		width: 100%;
 	}
 
