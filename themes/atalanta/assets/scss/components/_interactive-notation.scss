@@ -148,22 +148,114 @@
 #bianchi-music-1 {
 	height: 22rem;
 	#svg4182 {
-		margin-left: -4rem;
+		margin-left: 1rem;
+		transform: scale(1.2);
 	}
 }
-@include media('>phone', '<=tablet') {
+@include media('>desktop', '<=1350px') {
+	#bianchi-music-1 #svg4182 {
+		margin: 0;
+		transform: scale(1);
+	}	
+}
+@include media('>=tablet', '<=desktop') {
 	.interactive-notation .music .cmn {
-		width: 85%;
+		width: 88%;
 	}
 	.interactive-notation .music .play-button {
-		height: 6rem;
-		width: 6rem;
+		height: 5.5rem;
+		width: 5.5rem;
 	}
 	#bianchi-music-1 #svg4182 {
+		margin: 0 -2rem 0 0;
 		transform: scale(.8);
-		margin-left: 0;
-		margin-right: -1rem;
 	}
+}
+@include media('>=320px', '<tablet') {
+	#bianchi-music-1 {
+		height: 28rem;
+	}
+	#bianchi-music-1 .interactive-notation h4, 
+	#bianchi-music-2 .interactive-notation h4 {
+		margin-bottom: 2rem;
+		padding: 0;
+	}
+	.interactive-notation .music {
+		flex-direction: column;
+	}
+	.interactive-notation .music .play-button {
+		border-radius: 15px;
+		height: 4rem;
+		margin-bottom: 1rem;
+		padding: 0 0 4rem 0;
+		width: 100%;	
+	}
+	.interactive-notation .music .play-button.playing {
+		padding: 0 0 4rem 0;
+	}
+	.interactive-notation .music .cmn {
+		height: 10rem;
+		margin: 0 0 0 -0.25rem;
+		padding: 0;
+	}
+	#bianchi-music-1 #svg4182 {
+		margin: 0 0 0 0;
+		transform: scale(.4);
+	}
+}
+@include media('>=480px', '<tablet', 'landscape') {
+	#bianchi-music-1 {
+		height: 24rem;
+	}
+	#bianchi-music-1 .interactive-notation h4, 
+	#bianchi-music-2 .interactive-notation h4 {
+		margin-bottom: 0;
+	}
+	.interactive-notation .music {
+		flex-direction: row;
+	}
+	.interactive-notation .music .play-button {
+		border-radius: 50%;
+		height: 5rem;
+		margin-bottom: 0;
+		padding: 0 0 0 0;
+		width: 5rem;	
+	}
+	.interactive-notation .music .cmn {
+		height: auto;
+		margin: 1rem 0 0 0;
+		width: 85%;
+	}
+	#bianchi-music-1 #svg4182 {
+		margin: 0 0 0 0;
+		transform: scale(.55);
+	}
+}
+@include media('>=360px', '<tablet', 'portrait') {
+	#bianchi-music-1 #svg4182 {
+		transform: scale(.45);
+	}	
+}
+@include media('>=600px', '<tablet', 'landscape') {
+	#bianchi-music-1 #svg4182 {
+		transform: scale(.65);
+	}	
+}
+@include media('>=400px', '<tablet', 'portrait') {
+	#bianchi-music-1 #svg4182 {
+		transform: scale(.48);
+	}	
+}
+@include media('>=700px', '<tablet', 'landscape') {
+	#bianchi-music-1 {
+		height: 24rem;
+	}
+	.interactive-notation .music .cmn {
+		width: 88%;
+	}
+	#bianchi-music-1 #svg4182 {
+		transform: scale(.75);
+	}	
 }
 #bianchi-music-2 {
 	height: 17.5rem;
@@ -179,10 +271,6 @@
 	}
 }
 @include media('>phone', '<=tablet') {
-	.interactive-notation .music .play-button {
-		height: 6rem;
-		width: 6rem;
-	}
 	#bianchi-music-2 .interactive-notation .music .cmn > svg {
 		margin-right: -7rem;
 		transform: scale(1.2);
@@ -215,7 +303,7 @@
 		width: 100%;
 	}
 	#bianchi-music-3.interactive-notation .music .cmn > svg {
-		margin-left: 4rem;
+		margin-left: 5rem;
 		transform: scale(1.3);
 		width: 100%;
 	}
