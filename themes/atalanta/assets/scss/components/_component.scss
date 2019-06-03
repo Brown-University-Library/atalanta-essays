@@ -706,7 +706,7 @@ sup {
 	padding: 30px 0;
 
 	@include media('>=tablet') {
-		padding: 120px 0 60px;
+		padding: 120px 0 0;
 	}
 
 	.sources-wrapper {
@@ -770,6 +770,7 @@ sup {
 }
 
 .citation {
+	padding-top: 120px;
 	margin-bottom: 50px;
 	
 	@include media('>=tablet') {
