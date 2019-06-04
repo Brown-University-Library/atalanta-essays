@@ -7,9 +7,23 @@
 		display: flex;
 
 		-webkit-flex-flow: row wrap;
-		align-items: center;
+		-webkit-box-align: center;
+	    -moz-box-align: center;
+	    -webkit-align-items: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+		-webkit-box-pack: center;
+		-moz-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
 		justify-content: center;
-		flex-direction: row;
+		-webkit-box-direction: normal;
+	    -moz-box-direction: normal;
+	    -webkit-box-orient: horizontal;
+	    -moz-box-orient: horizontal;
+	    -webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	    flex-direction: row;
 		margin: 0;
 		padding: 0;
 	}
@@ -19,11 +33,24 @@
 	}
 	.music .play-button {
 		background: $yellow;
+		border: none;
 		border-radius: 50%;
 		color: $dark-gray;
 		cursor: pointer;
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
 		display: flex;
-		align-items: center;
+		-webkit-box-align: center;
+	    -moz-box-align: center;
+	    -webkit-align-items: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+		-webkit-box-pack: center;
+		-moz-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
 		justify-content: center;
 		font-size: 150%;
 		height: 7rem;
@@ -31,6 +58,7 @@
 		padding: .25rem 0 0 .5rem;
 		width: 8rem;
 	}
+	.music .play-button:hover,
 	.music .play-button:active,
 	.music .play-button:focus {
 		background: $light-blue;
@@ -43,10 +71,21 @@
 	.music .play-button.paused, .music .play-button.playing {
 		
 	}
-
 	.music .cmn {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
 		display: flex;
-		align-items: center;
+		-webkit-box-align: center;
+	    -moz-box-align: center;
+	    -webkit-align-items: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+		-webkit-box-pack: center;
+		-moz-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
 		justify-content: center;
 		padding-top: 2rem;
 		width: 100%;
@@ -54,8 +93,10 @@
 
     #highlight-box-1 {
         fill: $green_desaturated;
-
     }
+    #text3868 {
+		transform: translate3D(4.25%, 0, 0);
+	}
     @include media('>phone', '<=tablet') {
     	#highlight-box-1, 
     	#path5800, 
@@ -65,12 +106,14 @@
     	#text3868 {
 
     	}
-
 	}
 
     #highlight-box-2 {
         fill: $yellow;
     }
+    #text3864 {
+		transform: translate3D(4%, 0, 0);
+	}
     @include media('>phone', '<=tablet') {
 	    #highlight-box-2 {
 	    	
@@ -83,6 +126,9 @@
     #highlight-box-3 {
         fill: $blue_desaturated;
     }
+    #text3872 {
+		transform: translate3D(4.5%, 0, 0);
+	}
     @include media('>phone', '<=tablet') {
 	    #highlight-box-3 {
 
@@ -94,6 +140,17 @@
 
     #highlight-box-4 {
         fill: $red_desaturated;
+    }
+    #text3876 {
+		transform: translate3D(4.75%, 0, 0);
+	}
+	@include media('>phone', '<=tablet') {
+	    #highlight-box-4 {
+
+    	}
+    	#text3876 {
+  
+    	}
     }
 
 	/* parallel fifths icons */
@@ -152,25 +209,6 @@
 		transform: scale(1.2);
 	}
 }
-@include media('>desktop', '<=1350px') {
-	#bianchi-music-1 #svg4182 {
-		margin: 0;
-		transform: scale(1);
-	}	
-}
-@include media('>=tablet', '<=desktop') {
-	.interactive-notation .music .cmn {
-		width: 88%;
-	}
-	.interactive-notation .music .play-button {
-		height: 5.5rem;
-		width: 5.5rem;
-	}
-	#bianchi-music-1 #svg4182 {
-		margin: 0 -2rem 0 0;
-		transform: scale(.8);
-	}
-}
 @include media('>=320px', '<tablet') {
 	#bianchi-music-1 {
 		height: 28rem;
@@ -181,7 +219,13 @@
 		padding: 0;
 	}
 	.interactive-notation .music {
-		flex-direction: column;
+		-webkit-box-direction: normal;
+	    -moz-box-direction: normal;
+	    -webkit-box-orient: vertical;
+	    -moz-box-orient: vertical;
+	    -webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	    flex-direction: column;
 	}
 	.interactive-notation .music .play-button {
 		border-radius: 15px;
@@ -203,6 +247,16 @@
 		transform: scale(.4);
 	}
 }
+@include media('>=360px', '<tablet', 'portrait') {
+	#bianchi-music-1 #svg4182 {
+		transform: scale(.45);
+	}	
+}
+@include media('>=400px', '<tablet', 'portrait') {
+	#bianchi-music-1 #svg4182 {
+		transform: scale(.48);
+	}	
+}
 @include media('>=480px', '<tablet', 'landscape') {
 	#bianchi-music-1 {
 		height: 24rem;
@@ -212,7 +266,13 @@
 		margin-bottom: 0;
 	}
 	.interactive-notation .music {
-		flex-direction: row;
+		-webkit-box-direction: normal;
+	    -moz-box-direction: normal;
+	    -webkit-box-orient: horizontal;
+	    -moz-box-orient: horizontal;
+	    -webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	    flex-direction: row;
 	}
 	.interactive-notation .music .play-button {
 		border-radius: 50%;
@@ -231,19 +291,9 @@
 		transform: scale(.55);
 	}
 }
-@include media('>=360px', '<tablet', 'portrait') {
-	#bianchi-music-1 #svg4182 {
-		transform: scale(.45);
-	}	
-}
 @include media('>=600px', '<tablet', 'landscape') {
 	#bianchi-music-1 #svg4182 {
 		transform: scale(.65);
-	}	
-}
-@include media('>=400px', '<tablet', 'portrait') {
-	#bianchi-music-1 #svg4182 {
-		transform: scale(.48);
 	}	
 }
 @include media('>=700px', '<tablet', 'landscape') {
@@ -255,6 +305,25 @@
 	}
 	#bianchi-music-1 #svg4182 {
 		transform: scale(.75);
+	}	
+}
+@include media('>=tablet', '<=desktop') {
+	.interactive-notation .music .cmn {
+		width: 88%;
+	}
+	.interactive-notation .music .play-button {
+		height: 5.5rem;
+		width: 5.5rem;
+	}
+	#bianchi-music-1 #svg4182 {
+		margin: 0 -2rem 0 0;
+		transform: scale(.8);
+	}
+}
+@include media('>desktop', '<=1350px') {
+	#bianchi-music-1 #svg4182 {
+		margin: 0;
+		transform: scale(1);
 	}	
 }
 #bianchi-music-2 {
@@ -270,27 +339,69 @@
 		width: 90%
 	}
 }
-@include media('>phone', '<=tablet') {
+@include media('>=320px', '<tablet') {
+	#bianchi-music-2 {
+		padding: .5rem 0;
+	}
 	#bianchi-music-2 .interactive-notation .music .cmn > svg {
-		margin-right: -7rem;
-		transform: scale(1.2);
+		height: 4rem;
+		margin: -4rem -3.5rem 1rem 0;
+		transform: scale(1.3);
 		width: 100%;
+	}
+}
+@include media('>=tablet', '<=desktop') {
+	#bianchi-music-2 .interactive-notation .music .cmn > svg {
+		margin-right: -8rem;
+		transform: scale(1.3);
 	}
 }
 #bianchi-music-3.interactive-notation {
 	height: 22rem;
 	padding: 0;
 	.music {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
 		display: flex;
-		align-items: flex-start;
-		flex-direction: column;
+		-webkit-box-align: start;
+	    -moz-box-align: start;
+	    -webkit-align-items: flex-start;
+	    -ms-flex-align: start;
+	    align-items: flex-start;
+		-webkit-box-direction: normal;
+	    -moz-box-direction: normal;
+	    -webkit-box-orient: vertical;
+	    -moz-box-orient: vertical;
+	    -webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	    flex-direction: column;
 		padding: 0;
 	}
 	.music .cmn {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
 		display: flex;
-		align-items: flex-start;
-		justify-content: center;
-		flex-direction: column;
+	    -webkit-box-align: start;
+	    -moz-box-align: start;
+	    -webkit-align-items: flex-start;
+	    -ms-flex-align: start;
+	    align-items: flex-start;
+		-webkit-box-pack: center;
+	    -moz-box-pack: center;
+	    -webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	    justify-content: center;
+		-webkit-box-direction: normal;
+	    -moz-box-direction: normal;
+	    -webkit-box-orient: vertical;
+	    -moz-box-orient: vertical;
+	    -webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	    flex-direction: column;
 		padding-top: 0;
 	}
 	.music .cmn > svg {
@@ -298,13 +409,22 @@
 		width: 115%;
 	}
 }
-@include media('>phone', '<=tablet') {
+@include media('>=320px', '<tablet') {
+	#bianchi-music-3.interactive-notation {
+		height: 15rem;
+	}
 	#bianchi-music-3.interactive-notation .music .cmn {
 		width: 100%;
 	}
 	#bianchi-music-3.interactive-notation .music .cmn > svg {
-		margin-left: 5rem;
+		margin-left: 2.5rem;
 		transform: scale(1.3);
 		width: 100%;
+	}
+}
+@include media('>=tablet', '<=desktop') {
+	#bianchi-music-3.interactive-notation .music .cmn > svg {
+		margin-left: 3.875rem;
+		transform: scale(1.3);
 	}
 }
