@@ -220,7 +220,7 @@
 }
 
 .search__modal {
-  height: 60vh;
+  height: 400px;
   min-height: 0;
   max-height: 0;
   overflow-y: hidden;
@@ -234,7 +234,7 @@
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-direction: column;
-  height: 40vh;
+  // height: 40vh;
   margin: 0;
   padding: 0 4rem;
   position: fixed;
@@ -243,6 +243,25 @@
   z-index: 1000;
   left: 0;
   right: 0;
+
+  button.x-close {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    background-image: url(../images/icon_X-close.svg);
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    height: 3.125rem;
+    /* transform: scale(.7); */
+    margin-top: 1rem;
+    width: 3.125rem;
+  }
 
   .search__bar {
     isplay: -webkit-box;
@@ -323,7 +342,7 @@
   }
 
   &.search__modal--slide-in {
-    max-height: 100vh;
+    max-height: 400px;
     -webkit-transition: max-height .35s ease;
     -o-transition: max-height .35s ease;
     transition: max-height .35s ease;
