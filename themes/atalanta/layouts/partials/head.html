@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
@@ -16,10 +17,14 @@
     {{ $style := resources.Get "scss/main.scss" | toCSS $options | postCSS (dict "use" "autoprefixer") | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
 
-    {{ $jquery := resources.Get "js/jquery-3.3.1.min.js" }}
+    {{ $jquery := resources.Get "js/vendor/jquery-3.3.1.min.js" }}
+    {{ $global := resources.Get "js/modules/global.js" }}
+    {{ $collections := resources.Get "js/modules/collections.js" }}
+    {{ $animations := resources.Get "js/modules/animations.js" }}
     {{ $search := resources.Get "js/modules/search.js" }}
-    {{ $main := resources.Get "js/jquery.main.js" }}
-    {{ $js := slice $jquery $main $search | resources.Concat "js/bundle.js" | minify | fingerprint }}
+    {{ $plugins := resources.Get "js/vendor/plugins.js" }}
+
+    {{ $js := slice $jquery $global $collections $animations $search $plugins | resources.Concat "js/bundle.js" | fingerprint }}
     <script src="{{ $js.Permalink }}" defer></script>
 
 </head>
