@@ -21,19 +21,11 @@
     {{ $global := resources.Get "js/modules/global.js" }}
     {{ $collections := resources.Get "js/modules/collections.js" }}
     {{ $animations := resources.Get "js/modules/animations.js" }}
-    {{ $searchmodal := resources.Get "js/modules/searchmodal.js" }}
-    {{ $plugins := resources.Get "js/vendor/plugins.js" }}
-    {{ $popper := resources.Get "js/vendor/popper.min.js" }}
-    {{ $searchresultspage := resources.Get "js/modules/page.js" }}
-    {{ $lunr := resources.Get "js/vendor/lunr.min.js" }}
-    {{ $lunrstemmersupport := resources.Get "js/vendor/lunr-languages/lunr.stemmer.support.js" }}
-    {{ $lunrmulti := resources.Get "js/vendor/lunr-languages/lunr.multi.js" }}
-    {{ $lunrde := resources.Get "js/vendor/lunr-languages/lunr.de.js" }}
     {{ $search := resources.Get "js/modules/search.js" }}
-    {{ $searchfunction := resources.Get "js/modules/searchfunction.js" }}
+    {{ $plugins := resources.Get "js/vendor/plugins.js" }}
     
 
-    {{ $js := slice $jquery $global $collections $animations $plugins $popper $searchresultspage $lunr $lunrstemmersupport $lunrmulti $lunrde $search $searchfunction $searchmodal | resources.Concat "js/bundle.js" | fingerprint }}
+    {{ $js := slice $jquery $global $collections $animations $search $plugins | resources.Concat "js/bundle.js" | fingerprint }}
     <script src="{{ $js.Permalink }}" defer></script>
 
 </head>
