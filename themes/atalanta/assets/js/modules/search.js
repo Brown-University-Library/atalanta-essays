@@ -1,80 +1,48 @@
-$(document).ready(function() {
+const SURROUNDING_CHARACTERS = 75;
+const MERGE_DISTANCE = SURROUNDING_CHARACTERS * 2;
 
-  var s,
-  searchModule = {
+var sectionNames = {
+    'fugue-de':     "Fugue (German)",
+    'epigram-de':   "Epigram (German)",
+    'image-la':     "Title (Latin)",
+    'epigram-la':   "Epigram (Latin)",
+    'discourse-la': "Discourse (Latin)",
+    'title-en':     "Title (English)",
+    'epigram-en':   "Epigram (English)",
+    'discourse-en': "Discourse (English)",
+};
 
-    settings: {
-      animationMenuSlideIn: 'topnav--slide-in',
-      animationMenuSlideOut: 'topnav--slide-out',
-      topnavSearchBtn: '.topnav__search button',
-      searchModalOpened: 'topnav__search--open',
-      searchModalClosed: 'topnav__search--closed',
-      searchModal: 'div.search__modal',
-      animationSearchSlideIn: 'search__modal--slide-in',
-      animationSearchSlideOut: 'search__modal--slide-out',
-      xCloseBtn: 'button.x-close',
-      xCloseBtnSVG: 'button.x-close > svg',
-      searchURL: '../search/search.html?q=',
-      searchQueryInput: 'input#search__bar__field',
-      submitSearchBtn: '.search__modal button.submit',
-      $documentElement: $('html, body')
-    },
+var essaySectionNames = {
+    'title':        "Title",
+    'subtitle':     "Subtitle",
+    'author':       "Author",
+    'body':         "Body",
+    'footnotes':    "Footnotes",
+}
 
-    init: function() {
+$("#ataSearch").submit(function(ev) {
+    ev.preventDefault();
 
-      s = this.settings;
-      this.bindUIActions();
+    $('#results div').hide();
+    var searchTerm = $('input', this).val();
+    results = doSearch(searchTerm);
+    console.log('results', results);
+    $('main').html(pageTemplate(results));
+    $('main').removeAttr("id");
+    $('main').removeAttr("class");
+    $('main').removeAttr("data-id");
+    $('main').removeAttr("data-page");
+    $('body').removeAttr("class");
+});
 
-    },
-
-    bindUIActions: function() {
-      searchModule.initSearch();
-    },
-
-    initSearch: function() {
-
-      /* search topnav button */
-      $(s.topnavSearchBtn).click(function(event) {
-        if( $(s.topnavSearchBtn).hasClass(s.searchModalClosed) ) {
-          searchModule.searchTextClear();
-          searchModule.searchModalOpen();
-        }
-        else if( $(s.topnavSearchBtn).hasClass(s.searchModalOpened) ) {
-          searchModule.searchModalClose();
-        }
-        else {
-          console.log("THE SEARCH BUTTON HAS NO STATE");
-        }
-        event.preventDefault();
-      });
-
-    },
-
-    searchTextClear: function() {
-      $(s.searchQueryInput).val('');
-    },
-    
-    searchModalClose: function() {
-      $(s.topnavSearchBtn).removeClass(s.searchModalOpened);
-      $(s.topnavSearchBtn).addClass(s.searchModalClosed);
-      $(s.searchModal).attr('aria-hidden', 'true');
-      $(s.searchModal).addClass(s.animationSearchSlideOut);
-      $(s.searchModal).removeClass(s.animationSearchSlideIn);
-      // $('body').removeClass('no-scroll');
-    },
-
-    searchModalOpen: function() {
-      $(s.topnavSearchBtn).removeClass(s.searchModalClosed);
-      $(s.topnavSearchBtn).addClass(s.searchModalOpened);
-      $(s.searchModal).attr('aria-hidden', 'false');
-      $(s.searchModal).addClass(s.animationSearchSlideIn);
-      $(s.searchModal).removeClass(s.animationSearchSlideOut);
-      $(s.searchQueryInput).focus();
-      // $('body').addClass('no-scroll');
+//searchfunction.js throws this event when it's done loading the search index.
+window.addEventListener('atalantaSearchLoad', event => {
+    if ( "ready" == event.detail.state ) {
+        //Success. We're ready to search; go ahead and set up your UI.
+        $("#ataSearch").show();
+    } else {
+        console.log("Failed to start search:", event);
+        //There was a problem loading the data we need to do the search. 
+        //event.detail.error may have details.
     }
-
-  }
-
-  searchModule.init();
-
 });
