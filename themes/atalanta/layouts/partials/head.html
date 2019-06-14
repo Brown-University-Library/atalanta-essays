@@ -21,11 +21,11 @@
     {{ $global := resources.Get "js/modules/global.js" }}
     {{ $collections := resources.Get "js/modules/collections.js" }}
     {{ $animations := resources.Get "js/modules/animations.js" }}
-    {{ $search := resources.Get "js/modules/search.js" }}
+    {{ $searchmodal := resources.Get "js/modules/searchmodal.js" }}
     {{ $plugins := resources.Get "js/vendor/plugins.js" }}
     
 
-    {{ $js := slice $jquery $global $collections $animations $search $plugins | resources.Concat "js/bundle.js" | fingerprint }}
+    {{ $js := slice $jquery $global $collections $animations $searchmodal $plugins | resources.Concat "js/bundle.js" | fingerprint }}
     <script src="{{ $js.Permalink }}" defer></script>
 
 </head>
