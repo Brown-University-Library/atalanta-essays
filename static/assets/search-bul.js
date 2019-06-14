@@ -38,6 +38,8 @@ $("#ataSearch").submit(function(ev) {
     $('main').removeAttr("data-id");
     $('main').removeAttr("data-page");
     $('body').removeAttr("class");
+    $('.fake-header').css("display", "none");
+    $('.header-area').css("display", "none");
 });
 
 //searchfunction.js throws this event when it's done loading the search index.
