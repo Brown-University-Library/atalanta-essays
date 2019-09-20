@@ -10,7 +10,9 @@
     {{ if .IsHome -}}
     <title>{{ .Site.Title }}</title>
     {{- else -}}
-    <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+    {{ $title := replace .Title "<em>" "" }}
+    {{ $title := replace $title "</em>" "" }}
+    <title>{{ $title }} &middot; {{ .Site.Title }}</title>
     {{- end }}
 
     {{ $options := (dict "targetPath" "css/style.css" "outputStyle" "compressed" "enableSourceMap" true) }}
