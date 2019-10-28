@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "Atalanta Fugiens"
+title = "Furnace and Fugue"
 theme = "atalanta"
 assetDir = "assets"
 disableLiveReload = true
