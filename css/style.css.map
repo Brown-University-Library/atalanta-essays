@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "style.css",
-	"sourceRoot": "/Users/crystalbrusch/Documents/atalanta/atl-development/jake/atalanta",
+	"sourceRoot": "/Users/crystalbrusch/Documents/atalanta/atl-development/atalanta_hugo",
 	"sources": [
 		"themes/atalanta/assets/scss/main.scss",
 		"themes/atalanta/assets/scss/vendors/_include-media.scss",
