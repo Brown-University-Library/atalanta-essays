@@ -17,6 +17,7 @@
 
     {{ $options := (dict "targetPath" "css/style.css" "outputStyle" "compressed" "enableSourceMap" true) }}
     {{ $style := resources.Get "scss/main.scss" | toCSS $options | postCSS (dict "use" "autoprefixer") | minify | fingerprint }}
+    <style>@media print {div.page-anchor, div.header-wrap, div.collections-wrapper { display:none;} }</style>
     <link rel="stylesheet" href="{{ $style.Permalink }}">
 
     {{ $jquery := resources.Get "js/vendor/jquery-3.3.1.min.js" }}
