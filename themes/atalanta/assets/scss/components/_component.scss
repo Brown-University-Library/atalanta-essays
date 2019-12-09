@@ -747,8 +747,9 @@ sup {
 			word-wrap: break-all;
 			text-decoration: underline;
 
-			&:hover {
-				color: $orange;
+			&:hover, 
+			&:focus {
+				color: $orange_accessible;
 			}
 		}
 	}	
