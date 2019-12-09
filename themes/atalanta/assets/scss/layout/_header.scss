@@ -27,6 +27,9 @@
     .light-logo {
       display: none;
     }
+    .bright-logo {
+      display: none;
+    }
 
     a {
       color: $dark-gray;
@@ -689,7 +692,9 @@
       .dark-logo {
         display: none;
       }
-
+      .bright-logo {
+        display: none;
+      }
       .light-logo {
         display: block;
       }
@@ -697,8 +702,11 @@
 
     .logo:hover, 
     .logo:focus {
-      .dark-logo {
+      .bright-logo {
         display: block;
+      }
+      .dark-logo {
+        display: none;
       }
       .light-logo {
         display: none;
