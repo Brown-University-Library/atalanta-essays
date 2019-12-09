@@ -16,6 +16,11 @@
 			a {
 				border-bottom: 1px solid #658197;
 			}
+			a:hover, 
+			a:focus {
+				color: #333;
+				border-bottom: 1px dotted #333;
+			}
 			sup {
 				a {
 					border-bottom: none;
