@@ -703,6 +703,16 @@ sup {
 	ul {
 		li {
 			padding: 10px 0;
+			a {
+			color: $dark-gray;
+			word-wrap: break-all;
+			text-decoration: underline;
+
+				&:hover, 
+				&:focus {
+					color: $orange_accessible;
+				}
+			}
 		}
 	}
 }
