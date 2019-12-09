@@ -65,8 +65,9 @@
 			color: $white;
 			letter-spacing: 0.8px;
 			
-			&:hover {
-				color: #dc4929;
+			&:hover, 
+			&:focus {
+				color: $yellow;
 			}
 		}
 	}

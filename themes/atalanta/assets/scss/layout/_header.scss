@@ -33,6 +33,16 @@
     }
   }
 
+  .logo:hover, 
+  .logo:focus {
+    .light-logo {
+      display: block;
+    }
+    .dark-logo {
+      display: none;
+    }
+  }
+
   .header-wrap {
     position: relative;
 
@@ -187,13 +197,14 @@
         display: block;
 
         @include media('>=tablet') {
-          color: $dark-gray;
+          color: $dark-gray_accessible;
           display: inline;
           padding: 0;
         }
 
-        &:hover {
-          color: $yellow;
+        &:hover, 
+        &:focus {
+          color: $white;
           background: lighten($dark-gray, 10%);
 
           @include media('>=tablet') {
@@ -684,6 +695,16 @@
       }
     }
 
+    .logo:hover, 
+    .logo:focus {
+      .dark-logo {
+        display: block;
+      }
+      .light-logo {
+        display: none;
+      }
+    }
+
     .header-wrap {
       &:before {
         display: none;
@@ -772,7 +793,8 @@
         > a {
           color: #808080;
 
-          &:hover {
+          &:hover, 
+          &:focus {
             color: $yellow;
           }
         }
