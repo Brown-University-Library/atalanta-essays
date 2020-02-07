@@ -37,13 +37,16 @@
   }
 
   .logo:hover, 
-  .logo:focus {
+  .logo > a:focus {
     .light-logo {
       display: block;
     }
     .dark-logo {
       display: none;
     }
+  }
+  .logo > a:focus img {
+    outline: 1px dotted #fff;
   }
 
   .header-wrap {
@@ -147,6 +150,7 @@
         bottom: -13px;
         background-color: transparent;
         border: none;
+        color: #0f0f0f;
         cursor: pointer;
         padding: 0;
         color: #333;
@@ -161,8 +165,16 @@
       svg  {
         width: 88px;
         .st0 {
-          stroke: #333;
+          stroke: #0f0f0f;
         }
+      }
+      button:hover svg .st0, 
+      button:focus svg .st0 {
+        stroke: #fff;
+        transition: .2s;
+      }
+      button:focus {
+        outline: 1px dotted #fff;
       }
     }
 
@@ -218,11 +230,28 @@
     }
   }
 
+  ul > li > a:focus {
+    outline: 1px dotted #fff !important;
+  }
+
   .fixed-header & {
     ul {
       li.topnav__search {
         display: none;
       }
+    }
+
+    ul > li > a:focus {
+      outline: 1px dotted $yellow !important;
+    }
+
+    .logo:hover {
+      .light-logo {
+        display: none;
+      }
+      .bright-logo {
+        display: block;
+      } 
     }
   }
 
@@ -248,7 +277,6 @@
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-direction: column;
-  // height: 40vh;
   margin: 0;
   padding: 0 4rem;
   position: fixed;
@@ -267,15 +295,24 @@
     -ms-flex-item-align: end;
     align-self: flex-end;
     background-image: url(../images/icon_X-close.svg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: 2rem;
     -webkit-filter: invert(100%);
     filter: invert(100%);
     height: 3.125rem;
-    /* transform: scale(.7); */
-    margin-right: 1.625rem;
     margin-top: 1rem;
+    position: absolute;
+    right: 5.625rem;
     width: 3.125rem;
+  }
+  button.x-close:hover, 
+  button.x-close:focus {
+    filter: invert(0%);
+    transition: .2s;
+  }
+  button.x-close:focus {
+    outline: 1px dotted $white;
   }
 
   .search__bar {
@@ -348,11 +385,16 @@
     border-bottom: 2px solid #222;
     color: #F1F1F1;
 
-    &:hover {
+    &:hover, 
+    &:focus {
       background-color: transparent;
       border: 2px solid #222;
       color: #222;
       transition: background-color .2s;
+    }
+
+    &:focus {
+      outline: 2px dotted $white;
     }
   }
 
@@ -711,6 +753,10 @@
       .light-logo {
         display: none;
       }
+    }
+
+    .logo > a:focus {
+      outline: 1px dotted #fff !important;
     }
 
     .header-wrap {
