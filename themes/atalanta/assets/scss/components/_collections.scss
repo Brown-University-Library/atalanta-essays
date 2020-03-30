@@ -119,6 +119,10 @@
 		text-align: right;
 		font-size: 13px;
 
+		a:focus {
+			outline: 1px dotted white;
+		}
+
 		.btn-up {
 			margin: 0 2px;
 		}
@@ -255,6 +259,9 @@
 			margin: 0;
 		}
 	}
+	.new-collection a:focus {
+		outline: 1px dotted $yellow;
+	}
 }
 
 .collection-view {
@@ -297,6 +304,10 @@
 .view-icon {
 	margin-left: 34px;
 	line-height: 0;
+
+	a:focus span {
+		outline: 1px dotted $yellow;
+	}
 
 	span {
 		display: inline-block;
@@ -440,6 +451,10 @@
 			&:hover {
 				color: $yellow;
 			}
+
+			&:focus {
+				outline: 1px dotted $yellow;
+			}
 		}
 
 		h6 {
@@ -505,6 +520,10 @@
 
 			a {
 				color: #b2b2b2
+			}
+
+			a:focus {
+				outline: 1px dotted $yellow;
 			}
 		}
 	}
@@ -729,6 +748,10 @@
 				}
 			}
 		}
+
+		a:focus {
+			outline: 1px dotted $yellow;
+		}
 	}
 
 	.name-tags {
@@ -758,6 +781,9 @@
 			margin: 0 6px;
 			font-size: 8px;
 		}
+	}
+	.tag-opener:focus {
+		outline: 1px dotted $yellow;
 	}
 	.tag-wrapper {
 		position: relative;
@@ -903,6 +929,10 @@
 			&:hover {
 				color:  #ffb000;
 			}
+
+			&:focus {
+				text-decoration: underline $yellow;
+			}
 		}
 	}
 	.active {
@@ -1014,6 +1044,10 @@
 				&:hover {
 					color: #ffb000;
 				}
+
+				&:focus {
+					outline: 1px dotted $yellow;
+				}
 			}
 		}
 	}
@@ -1065,6 +1099,11 @@
 			font-size: 20px;
 			color: #ffb000;
 			margin-left: 11px;
+		}
+
+		input:focus, 
+		button:focus {
+			outline: 1px solid $yellow;
 		}
 	}
 }
@@ -1201,6 +1240,10 @@
 			&:hover {
 				color: #ffb000;
 			}
+
+			&:focus {
+				outline: 1px solid $yellow;
+			}
 		}
 	}
 }
@@ -1255,6 +1298,10 @@
 
 			&:hover {
 				color: #ffb000;
+			}
+
+			&:focus {
+				outline: 1px solid $yellow;
 			}
 		}
 	}
@@ -1337,6 +1384,10 @@
 			margin: 0 0 5px;
 			display: block;
 		}
+
+		a:focus img {
+			outline: 2px dotted $yellow;
+		}
 	}
 
 	.add-link {
@@ -1352,6 +1403,10 @@
 			.link-disabled {
 				display: initial;
 			}
+		}
+
+		&:focus {
+			outline: 1px dotted $yellow;
 		}
 
 		.link-active {
