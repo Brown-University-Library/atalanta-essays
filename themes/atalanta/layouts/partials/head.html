@@ -31,5 +31,15 @@
     {{ $js := slice $jquery $global $collections $animations $searchmodal $plugins | resources.Concat "js/bundle.js" | fingerprint }}
     <script src="{{ $js.Permalink }}" defer></script>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162912752-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-162912752-1');
+    </script>
+
 </head>
 <body id="top">
