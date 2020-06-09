@@ -14,7 +14,7 @@
     
     
     <style>@media print {div.page-anchor, div.header-wrap, div.collections-wrapper { display:none;} }</style>
-    <link rel="stylesheet" href="/css/style.min.7ecf913059dfe74751b3c38cca69704541cc99d6504315375e1e4023ffcbe3f7.css">
+    <link rel="stylesheet" href="/css/style.min.4d9694922ebc113cf6f753914b40d79a63212ccd8680f4482f08a6d47dc2d330.css">
 
     
     
@@ -25,7 +25,17 @@
     
 
     
-    <script src="/js/bundle.2b46604069f8e8fcbfaa17807e40084b8a141b6547faa4f70e64cc2899ebc28c.js" defer></script>
+    <script src="/js/bundle.bf7aebdbe33e9ed1a8bfe9455c4032bd81c16d14499978c4e949b7dd4ef12c0f.js" defer></script>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162912752-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-162912752-1');
+    </script>
 
 </head>
 <body id="top">
@@ -226,7 +236,7 @@
     </div>
     <div class="sidebar">
       <ul>
-  <li><a href="#illustration-list" class="anchor">List of Illustrations</a></li>
+  <li><a href="#illustration-list" class="anchor">Illustrations</a></li>
   <li><a href="#works-cite" class="anchor">Works Cited</a></li>
   <li><a href="#citation" class="anchor">Citation</a></li>
   <li><a href="#biography" class="anchor">Author Biography</a></li>
@@ -1140,13 +1150,13 @@
       <div class="opener-holder">
         <span class="collection-name">Emblem Collections</span>
         <div class="js-btns">
-          <a href="#" class="btn-up">
+          <a href="#" class="btn-up" aria-label="Open the collections drawer">
             <span class="icon-up"></span>
           </a>
-          <a href="#" class="btn-down">
+          <a href="#" class="btn-down" aria-label="Make the collections drawer half height">
             <span class="icon-down"></span>
           </a>
-          <a href="#" class="btn-close">
+          <a href="#" class="btn-close" aria-label="Close the collections drawer">
             <span class="icon-cancel"></span>
           </a>
         </div>
@@ -1160,17 +1170,17 @@
           <a class="lightbox btn" data-link="create" data-type="ajax" href="/templates/modals/modal-create.html">Create
             a New Collection</a>
         </div>
-        <div class="collection-view">
+        <div class="collection-view" aria-hidden="true">
           <span class="title">view<em>:</em></span>
           <ul class="grids" data-target="#grid">
             <li class="view-icon sm-view">
-              <a href="javascript:;" data-grid="small"><span class="icon-viewsm"></span></a>
+              <a href="javascript:;" data-grid="small" aria-label="Show Small Images Emblem Grid"><span class="icon-viewsm"></span></a>
             </li>
             <li class="view-icon">
-              <a href="javascript:;" data-grid="medium"><span class="icon-viewmd"></span></a>
+              <a href="javascript:;" data-grid="medium" aria-label="Show Medium Images Emblem Grid"><span class="icon-viewmd"></span></a>
             </li>
             <li class="view-icon">
-              <a href="javascript:;" data-grid="large"><span class="icon-viewlg"></span></a>
+              <a href="javascript:;" data-grid="large" aria-label="Show Large Images Emblem Grid"><span class="icon-viewlg"></span></a>
             </li>
           </ul>
         </div>
@@ -1189,8 +1199,13 @@
         <li><a href="/atalanta-fugiens">DIGITAL EDITION</a></li>
         <li><a href="/essays">SCHOLARLY ESSAYS</a></li>
         <li><a href="/back-matter/about">ABOUT THE PROJECT</a></li>
+        <li><a href="/back-matter/terms">TERMS OF USE</a></li>
       </ul>
-      
+    </div>
+    <div class="footer--branding">
+      <a class="branding--logo" href="https://www.upress.virginia.edu/" target="_blank"><img src="assets/img/default/logoUVAPressHorizontalWhite.png" alt="Logo for University of Virginia Press" /></a>
+      <a class="branding--series" href="https://www.upress.virginia.edu/series/studies-early-modern-german-history" target="_blank">Studies in Early Modern German History</a>
+      <span class="branding--editor">H.C. Erik Midelfort, Series Editor</span>
     </div>
   </div>
 </footer>
@@ -1203,7 +1218,7 @@
       <div class="image-holder" data-thing="{{size}}">
 
           
-          <img src="/images/emblems/{{size}}/emblem{{id}}.{{size}}.jpg" >
+          <img src="/images/emblems/{{size}}/emblem{{id}}.{{size}}.jpg" alt="Emblem {{id}} thumbnail image">
 
        
         <div class="drag-image">
@@ -1220,9 +1235,9 @@
           <div class="name">Emblem {{name}}</div>
           <ul class="extra-edits">
             <li>
-              <a class="lightbox" data-link="zoom" data-type="ajax" data-src="/templates/modals/modal-zoom.html" href="javascript:;"><span class="icon-search"></span></a>
+              <a class="lightbox" data-link="zoom" data-type="ajax" data-src="/templates/modals/modal-zoom.html" href="javascript:;" aria-label="Get More Details on Emblem Image"><span class="icon-search"></span></a>
             </li>
-            <li><a href="#"> <span class="icon-trash"></span></a></li>
+            <li><a href="#" aria-label="Remove Emblem from Collection"> <span class="icon-trash"></span></a></li>
           </ul>
         </div>
         <div class="tag-wrapper">
