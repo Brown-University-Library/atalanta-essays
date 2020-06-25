@@ -26,6 +26,7 @@ $media-expressions: (
 @import 'vendors/icomoon';
 @import 'vendors/fancybox';
 @import 'vendors/owl-carousel';
+@import 'vendors/lity';
 
 @import 'base/functions';
 @import 'base/variables';
@@ -58,3 +59,4 @@ $media-expressions: (
 @import 'components/cookies-bar';
 @import 'components/magnify';
 @import 'components/search-results';
+@import 'components/doi';
