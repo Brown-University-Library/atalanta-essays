@@ -50,11 +50,15 @@
 .doi h6 {
 	font-size: 2.5rem;
 	font-weight: 600;
-	margin-bottom: 2rem;
+	margin-bottom: 0.25rem;
 }
 .doi p {
 	font-size: 1.5rem;
 }
 .doi__msg {
 	font-weight: 600;
+	margin-bottom: .875rem;
+}
+.doi-text {
+	display: none;
 }

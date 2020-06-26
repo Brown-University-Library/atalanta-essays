@@ -106,6 +106,7 @@ $(document).ready(function() {
 
     if (copyTest === true) {
         var copyTextArea = document.createElement("textarea");
+        copyTextArea.classList.add("doi-text");
         copyTextArea.value = text;
         document.body.appendChild(copyTextArea);
         copyTextArea.select();
