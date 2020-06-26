@@ -28,7 +28,7 @@
 	transition: .2s;
 }
 .btn--doi:focus {
-	outline: 2px dotted black;	
+	border: 1px dotted black;	
 }
 .wrapper--doi {
 	
@@ -58,7 +58,4 @@
 .doi__msg {
 	font-weight: 600;
 	margin-bottom: .875rem;
-}
-.doi-text {
-	display: none;
 }
